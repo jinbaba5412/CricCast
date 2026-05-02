@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CricCast — Live Cricket Broadcast Overlay</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500&display=swap');
+
+:root {
+  --gold: #f0b429;
+  --gold-dim: #8a6500;
+  --bg: #05080f;
+  --bg2: #080d1a;
+  --card: #0c1428;
+  --border: rgba(255,255,255,0.07);
+  --text: #e2e8f0;
+  --muted: #64748b;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; overflow-x: hidden; background: var(--bg); }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── BACKGROUND FIELD ── */
+.field-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.field-oval {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -44%) rotate(-12deg);
+  width: 900px;
+  height: 560px;
+  border: 1px solid rgba(255,255,255,0.025);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(10,30,8,0.35) 0%, transparent 70%);
+}
+.field-oval::after {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  border: 1px solid rgba(255,255,255,0.02);
+  border-radius: 50%;
+}
+.field-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+.field-glow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(240,180,41,0.04) 0%, transparent 65%);
+}
+
+/* ── LAYOUT ── */
+.page { position: relative; z-index: 1; }
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  background: rgba(5,8,15,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 36px;
+  height: 36px;
+}
+.logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: #fff;
+}
+.logo-text span { color: var(--gold); }
+
+nav { display: flex; align-items: center; gap: 8px; }
+.nav-link {
+  padding: 7px 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: #fff; }
+.nav-cta {
+  padding: 8px 20px;
+  background: var(--gold);
+  color: #000;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.nav-cta:hover { background: #fcd34d; transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 100px 48px 80px;
+  gap: 28px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold-dim);
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 8vw, 110px);
+  letter-spacing: 4px;
+  line-height: 0.95;
+  color: #fff;
+}
+.hero-title .accent { color: var(--gold); }
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--gold);
+  color: #000;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 0 40px rgba(240,180,41,0.25);
+}
+.btn-primary:hover {
+  background: #fcd34d;
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(240,180,41,0.4);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.04);
+}
+
+/* ── SCOREBOARD PREVIEW STRIP ── */
+.preview-strip {
+  margin: 0 48px 80px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  position: relative;
+}
+.preview-strip::before {
+  content: 'LIVE PREVIEW';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 10;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.3);
+}
+.preview-inner {
+  height: 180px;
+  background: linear-gradient(180deg, #1a3a1a 0%, #0f2a0f 100%);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+/* Fake pitch */
+.fake-pitch {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, transparent 1px, transparent 40px);
+}
+/* Demo scorebar */
+.demo-bar {
+  width: 100%;
+  height: 68px;
+  background: #0b1628;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+  border-top: 3px solid var(--gold);
+}
+.demo-team-block {
+  background: #c8f514;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 0 100%);
+  padding-right: 28px;
+}
+.demo-team-name { font-family: 'Bebas Neue', sans-serif; font-size: 30px; letter-spacing: 2px; color: #0b1628; }
+.demo-score { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: #0b1628; letter-spacing: 2px; }
+.demo-ov { font-size: 18px; color: rgba(0,0,0,0.5); font-family: 'Bebas Neue', sans-serif; }
+.demo-mid {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 18px;
+}
+.demo-player { display: flex; flex-direction: column; gap: 2px; }
+.demo-pname { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 900; letter-spacing: 1.5px; color: #fff; text-transform: uppercase; }
+.demo-pstat { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: #fff; letter-spacing: 1px; }
+.demo-sep { width: 1px; height: 36px; background: rgba(255,255,255,0.1); }
+.demo-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.demo-rr-block { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 14px; border-left: 1px solid rgba(255,255,255,0.07); }
+.demo-rr-label { font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.3); text-transform: uppercase; }
+.demo-rr-val { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #c8f514; }
+.demo-bowl-block { display: flex; flex-direction: column; justify-content: center; padding: 0 14px; border-left: 1px solid rgba(255,255,255,0.07); gap: 2px; }
+.demo-bowl-name { font-size: 13px; font-weight: 900; letter-spacing: 1px; color: #fff; text-transform: uppercase; }
+.demo-bowl-fig { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: #c8f514; }
+.demo-over-block { display: flex; align-items: center; gap: 3px; padding: 0 14px; border-left: 1px solid rgba(255,255,255,0.07); }
+.demo-ob { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 900; }
+.do-0  { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.4); }
+.do-4  { background: rgba(5,120,60,0.6); border: 1px solid #059669; color: #6ee7b7; }
+.do-6  { background: rgba(13,78,74,0.6); border: 1px solid #0d9488; color: #5eead4; }
+.do-W  { background: rgba(180,20,20,0.6); border: 1px solid #dc2626; color: #fca5a5; }
+.do-nb { background: rgba(40,35,30,0.6); border: 1px solid #57534e; color: #d6d3d1; }
+.do-e  { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); color: transparent; }
+
+/* ── FEATURES ── */
+.section {
+  padding: 80px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 48px;
+  line-height: 1;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.feat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.feat-card:hover {
+  border-color: rgba(240,180,41,0.25);
+  transform: translateY(-3px);
+}
+.feat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(240,180,41,0.1);
+  border: 1px solid rgba(240,180,41,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.feat-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.feat-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── SCOREBOARDS GRID ── */
+.boards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 0;
+}
+.board-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.board-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.board-card:hover {
+  border-color: rgba(240,180,41,0.3);
+  transform: translateX(4px);
+}
+.board-card:hover::before { opacity: 1; }
+.board-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+.board-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.board-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.board-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(240,180,41,0.08);
+  border: 1px solid rgba(240,180,41,0.15);
+  border-radius: 4px;
+  padding: 2px 8px;
+  align-self: flex-start;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  margin: 0 48px 80px;
+  background: linear-gradient(135deg, #0c1a36 0%, #060e1e 100%);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: 16px;
+  padding: 60px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta-text-group { flex: 1; min-width: 280px; }
+.cta-label { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 52px); letter-spacing: 2px; color: #fff; line-height: 1; }
+.cta-sub { font-size: 15px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+.cta-btns { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.3);
+}
+.footer-logo span { color: rgba(240,180,41,0.5); }
+.footer-copy {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero > * {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+.hero > *:nth-child(1) { animation-delay: 0.1s; }
+.hero > *:nth-child(2) { animation-delay: 0.2s; }
+.hero > *:nth-child(3) { animation-delay: 0.3s; }
+.hero > *:nth-child(4) { animation-delay: 0.4s; }
+.hero > *:nth-child(5) { animation-delay: 0.5s; }
+.preview-strip { animation: fadeUp 0.7s 0.55s ease forwards; opacity: 0; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  header { padding: 16px 20px; }
+  nav .nav-link { display: none; }
+  .hero { padding: 60px 20px 48px; }
+  .preview-strip { margin: 0 20px 48px; }
+  .demo-bowl-block, .demo-over-block { display: none; }
+  .section { padding: 48px 20px; }
+  .cta-section { margin: 0 20px 48px; padding: 36px 24px; }
+  footer { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="field-bg">
+  <div class="field-oval"></div>
+  <div class="field-noise"></div>
+  <div class="field-glow"></div>
+</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="17" stroke="#f0b429" stroke-width="1.5" opacity="0.4"/>
+        <circle cx="18" cy="18" r="11" stroke="#f0b429" stroke-width="1" opacity="0.25"/>
+        <line x1="6" y1="18" x2="30" y2="18" stroke="#f0b429" stroke-width="1" opacity="0.2"/>
+        <line x1="18" y1="6" x2="18" y2="30" stroke="#f0b429" stroke-width="1" opacity="0.2"/>
+        <rect x="14" y="8" width="4" height="20" rx="2" fill="#f0b429" opacity="0.9"/>
+        <rect x="18" y="14" width="10" height="3" rx="1.5" fill="#fff" opacity="0.7" transform="rotate(35 18 14)"/>
+      </svg>
+      <span class="logo-text">CRIC<span>CAST</span></span>
+    </div>
+    <nav>
+      <a href="#scoreboards" class="nav-link">Scoreboards</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="Controller-offline" class="nav-cta">Open Controller</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-eyebrow">Live Cricket Broadcast Overlay</div>
+    <h1 class="hero-title">
+      BROADCAST<br>
+      <span class="accent">QUALITY</span><br>
+      SCOREBOARDS
+    </h1>
+    <p class="hero-sub">
+      Professional cricket overlays for OBS, live streaming, and match broadcasts.
+      20 broadcast-style scoreboards. Real-time sync. Zero latency.
+    </p>
+    <div class="hero-btns">
+      <a href="Controller-offline" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Launch Controller
+      </a>
+      <a href="#scoreboards" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        View Scoreboards
+      </a>
+    </div>
+  </section>
+
+  <!-- Demo preview bar -->
+  <div class="preview-strip">
+    <div class="preview-inner">
+      <div class="fake-pitch"></div>
+      <div class="demo-bar">
+        <div class="demo-team-block">
+          <span class="demo-team-name">LQ</span>
+          <span class="demo-score">102/0</span>
+          <span class="demo-ov">8.4</span>
+        </div>
+        <div class="demo-mid">
+          <div class="demo-player">
+            <div class="demo-pname">&#9679; Farooq</div>
+            <div class="demo-pstat">61 <span style="font-size:13px;color:rgba(255,255,255,0.35);">(34)</span></div>
+          </div>
+          <div class="demo-sep"></div>
+          <div class="demo-player">
+            <div class="demo-pname" style="color:rgba(255,255,255,0.45);">Fakhar</div>
+            <div class="demo-pstat" style="color:rgba(255,255,255,0.45);">30 <span style="font-size:13px;color:rgba(255,255,255,0.2);">(18)</span></div>
+          </div>
+        </div>
+        <div class="demo-right">
+          <div class="demo-rr-block">
+            <div class="demo-rr-label">Run Rate</div>
+            <div class="demo-rr-val">11.77</div>
+          </div>
+          <div class="demo-bowl-block">
+            <div class="demo-bowl-name">Razaullah</div>
+            <div class="demo-bowl-fig">0-23 <span style="font-size:12px;color:rgba(255,255,255,0.35);">1.4</span></div>
+          </div>
+          <div class="demo-over-block">
+            <div class="demo-ob do-0">0</div>
+            <div class="demo-ob do-4">4</div>
+            <div class="demo-ob do-nb">Wd</div>
+            <div class="demo-ob do-0">1</div>
+            <div class="demo-ob do-6">6</div>
+            <div class="demo-ob do-nb">Wd</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <div class="section-label">What's Inside</div>
+    <div class="section-title">EVERYTHING YOU NEED</div>
+    <div class="features-grid">
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0b429" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="feat-title">20 Broadcast Layouts</div>
+        <div class="feat-desc">PSL, IPL, BCCI, Ashes, ODI — professional overlay styles inspired by real broadcast graphics.</div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0b429" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="feat-title">Superball Mode</div>
+        <div class="feat-desc">Power-up scoring: flat 12 runs on any delivery. Wicket deducts 5 from the total. One-click toggle.</div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0b429" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="feat-title">Live Sync</div>
+        <div class="feat-desc">All scoreboards update in real-time from the controller. No refresh, no lag — just smooth live data.</div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0b429" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="feat-title">Team Management</div>
+        <div class="feat-desc">Build squads, add captain photos, set team colors. Import and export your full tournament data as JSON.</div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0b429" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <div class="feat-title">OBS Ready</div>
+        <div class="feat-desc">Transparent background on all scoreboards. Drop any layout straight into OBS as a Browser Source.</div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0b429" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div class="feat-title">Import / Export</div>
+        <div class="feat-desc">Back up your full tournament — teams, squads, and match data — as a single JSON file. Restore anytime.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scoreboards list -->
+  <section class="section" id="scoreboards" style="padding-top: 0;">
+    <div class="section-label">Scoreboards</div>
+    <div class="section-title">PICK YOUR STYLE</div>
+    <div class="boards-grid">
+
+      <a href="Scoreboard1" class="board-card"><div class="board-num">SB 01</div><div class="board-name">Classic Bottom Bar</div><div class="board-desc">Clean horizontal bar, bottom-aligned</div><div class="board-tag">Bottom</div></a>
+      <a href="Scoreboard2" class="board-card"><div class="board-num">SB 02</div><div class="board-name">Top Score Strip</div><div class="board-desc">Compact strip running across the top</div><div class="board-tag">Top</div></a>
+      <a href="Scoreboard4" class="board-card"><div class="board-num">SB 04</div><div class="board-name">Centered Floating Card</div><div class="board-desc">Semi-transparent card over the pitch</div><div class="board-tag">Center</div></a>
+      <a href="Scoreboard5" class="board-card"><div class="board-num">SB 05</div><div class="board-name">Corner HUD</div><div class="board-desc">Minimal top-corner heads-up display</div><div class="board-tag">Corner</div></a>
+      <a href="Scoreboard6" class="board-card"><div class="board-num">SB 06</div><div class="board-name">Left Side Panel</div><div class="board-desc">Vertical panel on the left edge</div><div class="board-tag">Side</div></a>
+      <a href="Scoreboard7" class="board-card"><div class="board-num">SB 07</div><div class="board-name">Right Side Panel</div><div class="board-desc">Vertical panel on the right edge</div><div class="board-tag">Side</div></a>
+      <a href="Scoreboard8" class="board-card"><div class="board-num">SB 08</div><div class="board-name">Full Overlay</div><div class="board-desc">Full-screen match data display</div><div class="board-tag">Full</div></a>
+      <a href="Scoreboard9" class="board-card"><div class="board-num">SB 09</div><div class="board-name">Dark Minimal</div><div class="board-desc">Ultra-minimal dark theme strip</div><div class="board-tag">Bottom</div></a>
+      <a href="Scoreboard10" class="board-card"><div class="board-num">SB 10</div><div class="board-name">Stadium Big Screen</div><div class="board-desc">Large-format LED display style</div><div class="board-tag">Center</div></a>
+      <a href="Scoreboard11" class="board-card"><div class="board-num">SB 11</div><div class="board-name">News Ticker</div><div class="board-desc">Scrolling ticker with live score data</div><div class="board-tag">Bottom</div></a>
+      <a href="Scoreboard12" class="board-card"><div class="board-num">SB 12</div><div class="board-name">Score Bug</div><div class="board-desc">Small persistent score badge</div><div class="board-tag">Corner</div></a>
+      <a href="Scoreboard13" class="board-card"><div class="board-num">SB 13</div><div class="board-name">L-Shape Bracket</div><div class="board-desc">L-shaped overlay in the corner</div><div class="board-tag">Corner</div></a>
+      <a href="Scoreboard14" class="board-card" style="border-color:rgba(240,180,41,0.2);"><div class="board-num">SB 14</div><div class="board-name">PSL Broadcast Bar</div><div class="board-desc">Green/navy angled bar, PSL style</div><div class="board-tag" style="background:rgba(200,245,20,0.08);border-color:rgba(200,245,20,0.2);color:#c8f514;">New</div></a>
+      <a href="Scoreboard15" class="board-card" style="border-color:rgba(240,180,41,0.2);"><div class="board-num">SB 15</div><div class="board-name">Ashes Clean Bar</div><div class="board-desc">Minimal bar with lead indicator</div><div class="board-tag" style="background:rgba(200,245,20,0.08);border-color:rgba(200,245,20,0.2);color:#c8f514;">New</div></a>
+      <a href="Scoreboard16" class="board-card" style="border-color:rgba(240,180,41,0.2);"><div class="board-num">SB 16</div><div class="board-name">ODI Dual-Team Bar</div><div class="board-desc">Angled split bar, both teams shown</div><div class="board-tag" style="background:rgba(200,245,20,0.08);border-color:rgba(200,245,20,0.2);color:#c8f514;">New</div></a>
+      <a href="Scoreboard17" class="board-card" style="border-color:rgba(240,180,41,0.2);"><div class="board-num">SB 17</div><div class="board-name">BCCI Dark Blue</div><div class="board-desc">Dark navy with orange accent, BCCI style</div><div class="board-tag" style="background:rgba(200,245,20,0.08);border-color:rgba(200,245,20,0.2);color:#c8f514;">New</div></a>
+      <a href="Scoreboard18" class="board-card" style="border-color:rgba(240,180,41,0.2);"><div class="board-num">SB 18</div><div class="board-name">IPL Split Bar</div><div class="board-desc">Red-blue franchise split, IPL style</div><div class="board-tag" style="background:rgba(200,245,20,0.08);border-color:rgba(200,245,20,0.2);color:#c8f514;">New</div></a>
+      <a href="Scoreboard19" class="board-card" style="border-color:rgba(240,180,41,0.2);"><div class="board-num">SB 19</div><div class="board-name">Dual Innings Panel</div><div class="board-desc">Side-by-side innings comparison</div><div class="board-tag" style="background:rgba(200,245,20,0.08);border-color:rgba(200,245,20,0.2);color:#c8f514;">New</div></a>
+      <a href="Scoreboard20" class="board-card" style="border-color:rgba(240,180,41,0.2);"><div class="board-num">SB 20</div><div class="board-name">Full-Width Ticker</div><div class="board-desc">Two-row bar: score strip + info ticker</div><div class="board-tag" style="background:rgba(200,245,20,0.08);border-color:rgba(200,245,20,0.2);color:#c8f514;">New</div></a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-text-group">
+      <div class="cta-label">Ready to go live?</div>
+      <div class="cta-title">START YOUR BROADCAST</div>
+      <div class="cta-sub">Open the controller, set up your teams, pick a scoreboard layout and you're on air.</div>
+    </div>
+    <div class="cta-btns">
+      <a href="Controller-offline" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Open Controller
+      </a>
+      <a href="#scoreboards" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Browse Scoreboards
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">CRIC<span>CAST</span></div>
+    <div class="footer-copy">Live cricket broadcast overlay system &mdash; Offline capable</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* ════════════════════════════════════════════════════════════════════
+   CricCast — Bridge: maps legacy token names used in
+   views/dashboard.html and Controller-offline.html to the new
+   theme-aware "Pitch" tokens (cc-tokens.css). This lets every
+   existing `var(--bg)`, `var(--card)`, `var(--accent)` etc.
+   auto-flip with the new dark/light toggle WITHOUT touching the
+   thousands of inline CSS lines that reference them.
+
+   Load order: cc-tokens.css → cc-bridge.css → cc-base.css → page <style>
+
+   --bat-color / --bowl-color are NOT mapped here. Controller JS sets
+   them dynamically per match (team colors); they must remain
+   independently controlled.
+   ════════════════════════════════════════════════════════════════════ */
+
+:root,
+:root[data-theme="dark"],
+:root[data-theme="light"],
+:root[data-theme="system"] {
+  /* Surfaces */
+  --bg:        var(--cc-bg-base);
+  --dark:      var(--cc-bg-base);
+  --surface:   var(--cc-bg-elevated);
+  --surface2:  var(--cc-bg-card);
+  --card:      var(--cc-bg-elevated);
+  --card2:     var(--cc-bg-card);
+
+  /* Border */
+  --border:    var(--cc-border);
+
+  /* Text */
+  --text:      var(--cc-text-primary);
+  --muted:     var(--cc-text-muted);
+
+  /* Accents (no purple) */
+  --accent:       var(--cc-accent-primary);   /* dashboard primary CTA -> emerald */
+  --accent-g:     var(--cc-accent-primary);   /* dashboard "green" alias */
+  --blue:         var(--cc-accent-cyan);      /* controller "blue" -> cyan/data */
+  --blue-bright:  var(--cc-accent-cyan);
+
+  --gold:         var(--cc-accent-amber);
+  --gold-dim:     #B45309;                     /* darker amber for gradient stops */
+
+  --danger:       var(--cc-accent-coral);
+  --success:      var(--cc-accent-primary);
+}
+
+/* ─── Broadcast-preview region: force dark broadcast aesthetic always ──
+   The `.bb-*`, `.mp-*`, `.broadcast-bar`, `.cc-logo-*` classes inside
+   Controller-offline.html mirror the live Scoreboard pixel-for-pixel.
+   They must NOT flip with theme — TV broadcasts are always dark. We
+   re-pin the legacy tokens to fixed dark values within those scopes. */
+.broadcast-bar,
+.mini-player,
+.bb-batting,
+.bb-score,
+.bb-bowling-wrap,
+.bb-winner-full,
+.cc-logo-popper,
+.broadcast-header {
+  --bg:       #080c14;
+  --dark:     #080c14;
+  --surface:  #0f1625;
+  --surface2: #162032;
+  --card:     #0f1625;
+  --card2:    #162032;
+  --border:   #1e3a5f;
+  --text:     #e2e8f0;
+  --muted:    #94a3b8;
+  --gold:     #f59e0b;
+  --gold-dim: #92400e;
+  color-scheme: dark;
+}

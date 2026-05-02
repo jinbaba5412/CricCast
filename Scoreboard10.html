@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CricCast — Layout 10: ICC Full Scorecard</title>
+<style type="text/css">@font-face{font-family:Bebas Neue;src:url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B43_3z3b-.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B45_1z3b-.woff2);font-display:swap;}</style>
+<style>
+/* ── LAYOUT 10: ICC FULL SCORECARD (always-visible batting card in center) ── */
+:root{--gold:#f59e0b;--green:#065f46;--bat-color:#1e3a8a;--bowl-color:#7f1d1d;--text:#111;--muted:#6b7280;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Barlow Condensed',sans-serif;font-weight:700;background:transparent;color:var(--text);overflow:hidden;}.overlay-wrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:fixed;inset:0;padding:0 0 10px 0;z-index:100;}
+
+
+/* Full-height scorecard panel in center — NOT full screen */
+.broadcast-bar{width:980px;max-width:calc(100vw - 80px);background:#fff;border-radius:16px;overflow:visible;box-shadow:0 20px 60px rgba(0,0,0,0.3),0 4px 0 var(--bat-color);display:flex;flex-direction:column;}
+
+/* Header */
+.icc-header{display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--bat-color);background-image:linear-gradient(135deg,var(--bat-color),rgba(0,0,0,0.4));}
+.icc-logo{width:56px;height:56px;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.icc-logo img,.icc-logo svg{width:44px;height:44px;object-fit:contain;}
+.icc-team-name{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:4px;color:#fff;line-height:1;}
+.icc-inn-label{font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.icc-score-badge{margin-left:auto;text-align:right;}
+.icc-score-big{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--gold);letter-spacing:3px;line-height:1;}
+.icc-overs{font-size:14px;color:rgba(255,255,255,0.7);letter-spacing:1px;text-align:right;}
+
+/* Quick stats row */
+.icc-stats-row{display:flex;gap:0;background:#f8fafc;border-bottom:2px solid #e2e8f0;}
+.icc-stat{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 0;border-right:1px solid #e2e8f0;}
+.icc-stat:last-child{border-right:none;}
+.icc-stat-label{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;}
+.icc-stat-val{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--text);letter-spacing:1px;}
+
+/* Table */
+.icc-section-title{padding:7px 18px;background:#f1f5f9;color:var(--bat-color);font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid #e2e8f0;border-top:1px solid #e2e8f0;}
+.icc-table{width:100%;border-collapse:collapse;}
+.icc-table thead tr{background:#f8fafc;}
+.icc-table th{padding:7px 18px;font-size:12px;font-weight:900;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;text-align:left;border-bottom:1px solid #e2e8f0;}
+.icc-table th:not(:first-child){text-align:right;}
+.icc-table tbody tr{border-bottom:1px solid #f1f5f9;transition:background .15s;}
+.icc-table tbody tr.at-crease{background:#eff6ff;border-left:3px solid var(--bat-color);}
+.icc-table td{padding:8px 18px;font-size:15px;font-weight:700;color:var(--text);text-align:left;}
+.icc-table td:not(:first-child){text-align:right;}
+.icc-table td.bat-name{font-size:16px;font-weight:900;text-transform:uppercase;}
+.icc-table td.bat-name .not-out{color:var(--bat-color);font-size:11px;margin-left:4px;vertical-align:super;}
+.icc-table td.bat-name .out-label{font-size:11px;color:var(--muted);display:block;font-weight:600;}
+.icc-runs{font-size:18px;font-weight:900;color:var(--text);}
+.icc-4{color:#059669;font-weight:900;}.icc-6{color:#0891b2;font-weight:900;}.icc-sr{color:var(--muted);font-size:13px;}
+
+/* Footer */
+.icc-footer{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;background:#f8fafc;border-top:2px solid #e2e8f0;}
+.icc-footer-item{font-size:14px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+.icc-footer-item span{color:var(--text);margin-left:6px;font-size:16px;font-weight:900;}
+
+/* Live bar (hidden when scorecard shown, visible otherwise) */
+.icc-live-bar{width:100%;display:flex;align-items:center;background:var(--bat-color);padding:8px 18px;gap:16px;}
+.icc-live-batter{font-size:15px;font-weight:900;text-transform:uppercase;color:#fff;}
+.icc-live-batter.striker{color:var(--gold);}
+.icc-live-stat{font-size:14px;color:rgba(255,255,255,0.7);}
+.icc-live-divider{width:1px;height:30px;background:rgba(255,255,255,0.2);}
+.icc-live-score{font-family:'Bebas Neue',sans-serif;font-size:24px;margin-left:auto;color:#fff;}
+.icc-live-over-bal{display:flex;gap:4px;align-items:center;}
+.icc-ball{width:20px;height:20px;background:#fff;color:#000;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.icc-ball.small-text{font-size:8px;}
+
+/* Winner overlay */
+.icc-winner{display:none;padding:20px;background:linear-gradient(135deg,var(--green),#047857);text-align:center;}
+.icc-winner .w-title{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;letter-spacing:3px;line-height:1;}
+.icc-winner .w-sub{font-size:20px;color:rgba(255,255,255,0.8);font-weight:900;letter-spacing:2px;margin-top:4px;}
+
+/* Team sheet & other overlays */
+.team-sheet-card{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;max-width:calc(100vw - 80px);z-index:30;}
+</style>
+</head>
+<body>
+<div class="overlay-wrap" id="master-wrap" style="display:none;">
+  <!-- This layout shows the scorecard as the main "bar" -->
+  <div class="broadcast-bar" id="master-broadcast-bar" style="display:none;">
+    <div class="icc-header">
+      <div class="icc-logo" id="icc-logo"></div>
+      <div>
+        <div class="icc-team-name" id="icc-team-name">BATTING TEAM</div>
+        <div class="icc-inn-label" id="icc-inn-label">OVERS 0.0</div>
+      </div>
+      <div class="icc-score-badge">
+        <div class="icc-score-big" id="icc-score-big">0/0</div>
+        <div class="icc-overs" id="icc-overs">OVERS 0.0</div>
+      </div>
+    </div>
+    <div class="icc-stats-row" id="icc-stats-row">
+      <div class="icc-stat"><div class="icc-stat-label">CRR</div><div class="icc-stat-val" id="icc-crr">0.00</div></div>
+      <div class="icc-stat" id="icc-target-stat" style="display:none;"><div class="icc-stat-label" style="color:#d97706;">TARGET</div><div class="icc-stat-val" id="icc-target" style="color:#d97706;">0</div></div>
+      <div class="icc-stat" id="icc-rrr-stat" style="display:none;"><div class="icc-stat-label" style="color:#dc2626;">RRR</div><div class="icc-stat-val" id="icc-rrr" style="color:#dc2626;">0.00</div></div>
+      <div class="icc-stat"><div class="icc-stat-label">BOWLER</div><div class="icc-stat-val" id="icc-bowler" style="font-size:16px;">—</div></div>
+      <div class="icc-stat"><div class="icc-stat-label">FIGURES</div><div class="icc-stat-val" id="icc-bowl-fig" style="font-size:16px;">(0-0)</div></div>
+    </div>
+    <!-- Batting table -->
+    <div class="icc-section-title" id="icc-bat-section">BATTING</div>
+    <div id="target-strip"></div><table class="icc-table">
+      <thead><tr>
+        <th>BATSMAN</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th>
+      </tr></thead>
+      <tbody id="icc-bat-tbody"></tbody>
+    </table>
+    <!-- Bowling table -->
+    <div class="icc-section-title" id="icc-bowl-section">BOWLING</div>
+    <table class="icc-table">
+      <thead><tr>
+        <th>BOWLER</th><th>O</th><th>R</th><th>W</th><th>ECON</th>
+      </tr></thead>
+      <tbody id="icc-bowl-tbody"></tbody>
+    </table>
+    <!-- Footer with current over -->
+    <div class="icc-footer">
+      <div class="icc-footer-item">EXTRAS <span id="icc-extras">0</span></div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:13px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;">THIS OVER</span>
+        <div style="display:flex;gap:4px;" id="icc-thisover">—</div>
+      </div>
+      <div class="icc-footer-item">TOTAL <span id="icc-total">0/0 (0.0 OV)</span></div>
+    </div>
+    <!-- Live player bar at bottom -->
+    <div class="icc-live-bar" id="icc-live-bar">
+      <div>
+        <div class="icc-live-batter striker" id="icc-p1-name"><span id="bb-p1-bat" style="display:inline-block;width:7px;height:7px;background:#fff;border-radius:50%;margin-right:4px;flex-shrink:0;"></span>★ STRIKER</div>
+        <div class="icc-live-stat" id="icc-p1-stat">0 (0)</div>
+      </div>
+      <div class="icc-live-divider"></div>
+      <div>
+        <span id="bb-p2-bat" style="display:inline-block;width:7px;height:7px;background:transparent;border-radius:50%;margin-right:4px;flex-shrink:0;vertical-align:middle;"></span><div class="icc-live-batter" id="icc-p2-name">NON-STRIKER</div>
+        <div class="icc-live-stat" id="icc-p2-stat">0 (0)</div>
+      </div>
+      <div class="icc-live-score" id="icc-live-bowl-info">BOWLER (0-0)</div>
+    </div>
+    <!-- Winner panel -->
+    <div class="icc-winner" id="icc-winner">
+      <div class="w-title" id="icc-w-title">TEAM WINS</div>
+      <div class="w-sub" id="icc-w-sub">BY X RUNS</div>
+    </div>
+  </div>
+
+  <!-- Overlays for innings card / match summary / team sheet -->
+  <div id="innings-card" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;max-width:calc(100vw - 80px);background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);border-bottom:4px solid var(--bat-color);z-index:25;">
+    <div class="ic-header" style="display:flex;align-items:center;gap:16px;padding:14px 20px;background:linear-gradient(135deg,var(--bat-color),rgba(0,0,0,0.3));border-bottom:1px solid rgba(255,255,255,0.1);"><div id="ic-logo" style="width:52px;height:52px;border:2px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;"></div><div style="flex:1;"><div id="ic-team-name" style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:4px;color:#fff;">TEAM</div><div id="ic-subtitle" style="font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:2px;">OVERS 0.0</div></div><div><div id="ic-total-badge" style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--gold);text-align:right;">0/0</div><div id="ic-overs-badge" style="font-size:14px;color:rgba(255,255,255,0.7);text-align:right;">OVERS 0.0</div></div></div>
+    <div style="max-height:60vh;overflow-y:auto;"><div id="ic-bat-title" style="padding:8px 20px;background:#f8fafc;color:var(--bat-color);font-size:14px;font-weight:900;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid #e2e8f0;">BATTING</div><table style="width:100%;border-collapse:collapse;"><thead><tr style="background:#f8fafc;"><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:left;">BATSMAN</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">R</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">B</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">4s</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">6s</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">SR</th></tr></thead><tbody id="ic-bat-tbody"></tbody></table><div id="ic-bowl-title" style="padding:8px 20px;background:#f8fafc;color:var(--bat-color);font-size:14px;font-weight:900;letter-spacing:2px;text-transform:uppercase;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">BOWLING</div><table style="width:100%;border-collapse:collapse;"><thead><tr style="background:#f8fafc;"><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:left;">BOWLER</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">O</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">R</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">W</th><th style="padding:8px 20px;font-size:12px;color:var(--muted);text-align:right;">ECON</th></tr></thead><tbody id="ic-bowl-tbody"></tbody></table></div>
+    <div style="display:flex;justify-content:space-between;padding:10px 16px;background:#f8fafc;border-top:1px solid #e2e8f0;"><span style="font-size:14px;color:var(--muted);">EXTRAS <span id="ic-extras-val" style="color:var(--text);margin-left:6px;">0</span></span><span style="font-size:14px;color:var(--muted);">TOTAL <span id="ic-footer-total" style="color:var(--text);margin-left:6px;">0/0</span></span></div>
+  </div>
+  <div id="match-summary-card" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1000px;max-width:calc(100vw - 80px);background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);z-index:25;"><div style="padding:18px 28px;background:linear-gradient(135deg,var(--bat-color),rgba(0,0,0,0.3));border-bottom:2px solid var(--bat-color);text-align:center;"><div style="font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:6px;color:#fff;">MATCH SUMMARY</div></div><div id="ms-body" style="display:grid;grid-template-columns:1fr 1fr;"></div><div id="ms-result" style="padding:14px;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;color:#fff;background:var(--bat-color);">MATCH IN PROGRESS</div></div>
+  <div id="team-sheet-card" data-active-tab="bat" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;max-width:calc(100vw - 80px);z-index:30;"></div>
+</div>
+<script src="scoreboard-core-offline.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/EasePack.min.js"></script>
+<script src="vendor/confetti.min.js"></script>
+<script src="BroadcastEvents.js"></script>
+<script>
+function applyThemeColors(bat,bowl){
+  document.documentElement.style.setProperty('--bat-color',bat);document.documentElement.style.setProperty('--bowl-color',bowl);
+  document.querySelector('.icc-header').style.background=`linear-gradient(135deg,${bat},rgba(0,0,0,0.4))`;
+  document.querySelector('.icc-live-bar').style.background=bat;
+  document.querySelector('.broadcast-bar').style.borderBottomColor=bat;
+}
+function renderBroadcastBar(m,t){
+  const bat=t.find(x=>x.id===m.batTeamId),bowl=t.find(x=>x.id===m.bowlTeamId);
+  // Header
+  document.getElementById('icc-logo').innerHTML=logoEl(bat,44);
+  document.getElementById('icc-team-name').textContent=bat?bat.name.toUpperCase():'BATTING TEAM';
+  /* Wave 7.2d — innings ribbon now shows over count instead of "1ST/2ND INNINGS". */
+  document.getElementById('icc-inn-label').textContent=`OVERS ${Math.floor((m.balls||0)/6)}.${(m.balls||0)%6}`;
+  document.getElementById('icc-score-big').textContent=`${m.runs||0}/${m.wickets||0}`;
+  document.getElementById('icc-overs').textContent=`OVERS ${Math.floor((m.balls||0)/6)}.${(m.balls||0)%6}`;
+  // Stats row
+  document.getElementById('icc-crr').textContent=((m.runs||0)/((m.balls||0)/6||0.01)).toFixed(2);
+  document.getElementById('icc-bowler').textContent=m.bowler?m.bowler.toUpperCase():'—';
+  document.getElementById('icc-bowl-fig').textContent=`${m.bowlerWickets||0}-${m.bowlerRuns||0}`;
+  if(m.inning===2){document.getElementById('icc-target-stat').style.display='';document.getElementById('icc-rrr-stat').style.display='';document.getElementById('icc-target').textContent=m.target||0;const r=Math.max(0,(m.target||0)-(m.runs||0)),b=(m.maxOvers*6)-(m.balls||0);document.getElementById('icc-rrr').textContent=b>0?(r/(b/6)).toFixed(2):'0.00';}
+  else{document.getElementById('icc-target-stat').style.display='none';document.getElementById('icc-rrr-stat').style.display='none';}
+  // Batting table
+  const batStats=m.batsmanStats||{};
+  const currentStriker=m.p1?.name||'',currentNS=m.p2?.name||'';
+  let bHtml='';
+  Object.entries(batStats).sort((a,b)=>b[1].runs-a[1].runs).forEach(([name,s])=>{
+    const atCrease=!s.out&&(name===currentStriker||name===currentNS);
+    const sr=s.balls>0?((s.runs/s.balls)*100).toFixed(1):'—';
+    bHtml+=`<tr class="${atCrease?'at-crease':''}">
+      <td class="bat-name">${name}${!s.out?'<sup class="not-out">*</sup>':''}${s.out?'<span class="out-label">out</span>':''}</td>
+      <td class="icc-runs">${s.runs}</td><td style="color:var(--muted);">${s.balls}</td>
+      <td class="icc-4">${s.fours}</td><td class="icc-6">${s.sixes}</td><td class="icc-sr">${sr}</td>
+    </tr>`;
+  });
+  if(!bHtml)bHtml=`<tr><td colspan="6" style="padding:16px 18px;color:var(--muted);text-align:center;">No batting data yet</td></tr>`;
+  document.getElementById('icc-bat-tbody').innerHTML=bHtml;
+  // Bowling table  
+  const bowlStats=m.bowlerStats||{};
+  let wHtml='';
+  Object.entries(bowlStats).sort((a,b)=>{if(b[1].wickets!==a[1].wickets)return b[1].wickets-a[1].wickets;return a[1].runs-b[1].runs;}).forEach(([name,s])=>{
+    const econ=s.balls>0?(s.runs/(s.balls/6)).toFixed(1):'—';
+    wHtml+=`<tr><td class="bat-name" style="font-size:14px;">${name}</td><td style="color:var(--muted);">${fmtOvers(s.balls)}</td><td style="color:var(--muted);">${s.runs}</td><td style="color:#dc2626;font-weight:900;font-size:16px;">${s.wickets}</td><td class="icc-sr">${econ}</td></tr>`;
+  });
+  if(!wHtml)wHtml=`<tr><td colspan="5" style="padding:16px 18px;color:var(--muted);text-align:center;">No bowling data yet</td></tr>`;
+  document.getElementById('icc-bowl-tbody').innerHTML=wHtml;
+  // Footer
+  const strikeTotal=Object.values(batStats).reduce((a,s)=>a+(s.runs||0),0);
+  document.getElementById('icc-extras').textContent=Math.max(0,(m.runs||0)-strikeTotal);
+  document.getElementById('icc-total').textContent=`${m.runs||0}/${m.wickets||0} (${Math.floor((m.balls||0)/6)}.${(m.balls||0)%6} OV)`;
+  document.getElementById('icc-thisover').innerHTML=m.thisOverBalls?.length?m.thisOverBalls.map(b=>`<div class="icc-ball${b.toString().length>2?' small-text':''}">${b}</div>`).join(''):'—';
+  // Live bar / winner
+  if(m.isFinished){document.getElementById('icc-live-bar').style.display='none';document.getElementById('icc-winner').style.display='block';document.getElementById('icc-w-title').textContent=m.winner.toUpperCase();document.getElementById('icc-w-sub').textContent=m.winDesc.toUpperCase();}
+  else{document.getElementById('icc-live-bar').style.display='flex';document.getElementById('icc-winner').style.display='none';document.getElementById('icc-p1-name').textContent=(m||matchData)?.p1?.name||'STRIKER';{const _o=(m||matchData)?.batsmanStats?.[(m||matchData)?.p1?.name]?.out;const _e=document.getElementById('icc-p1-name');if(_e)_e.style.color=_o?'rgba(255,255,255,0.32)':'';}document.getElementById('icc-p1-stat').textContent=`${m.p1?.runs||0} (${m.p1?.balls||0})`;document.getElementById('icc-p2-name').textContent=m.p2?.name||'NON-STRIKER';document.getElementById('icc-p2-stat').textContent=`${m.p2?.runs||0} (${m.p2?.balls||0})`;document.getElementById('icc-live-bowl-info').textContent=m.bowler?`${m.bowler.toUpperCase()} (${m.bowlerWickets||0}-${m.bowlerRuns||0})`:'BOWLER';}
+  // Section titles
+  document.getElementById('icc-bat-section').textContent=`${bat?bat.name.toUpperCase():'BATTING'} — BATTING`;
+  document.getElementById('icc-bowl-section').textContent=`${bowl?bowl.name.toUpperCase():'BOWLING'} — BOWLING`;
+}
+const st=document.createElement('style');st.textContent=`.ic-table{width:100%;border-collapse:collapse;}.ic-table tbody tr{border-bottom:1px solid #f1f5f9;}.ic-table tbody tr.striker-row{background:#eff6ff;border-left:3px solid var(--bat-color);}.ic-table td{padding:9px 20px;font-size:16px;font-weight:700;color:var(--text);text-align:left;}.ic-table td:not(:first-child){text-align:right;}.ic-table td.batter-name{font-size:17px;font-weight:900;text-transform:uppercase;color:var(--text);}.ic-table td.batter-name .not-out{color:var(--bat-color);font-size:12px;margin-left:4px;vertical-align:super;}.ic-table td.batter-name .out-label{font-size:12px;color:var(--muted);display:block;font-weight:600;}.ic-runs{font-size:20px;font-weight:900;}.ic-balls{color:var(--muted);}.ic-4{color:#059669;}.ic-6{color:#0891b2;}.ic-sr{color:var(--muted);font-size:14px;}
+.ms-innings{padding:20px 24px;}.ms-innings:first-child{border-right:1px solid #e2e8f0;}.ms-inn-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #e2e8f0;}.ms-inn-logo{width:44px;height:44px;background:#f1f5f9;border:2px solid #e2e8f0;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}.ms-inn-team{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);}.ms-inn-label{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}.ms-inn-score{margin-left:auto;text-align:right;}.ms-inn-score .runs{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--bat-color);letter-spacing:2px;line-height:1;}.ms-inn-score .overs{font-size:13px;color:var(--muted);}.ms-section-label{font-size:12px;font-weight:900;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid #f1f5f9;}.ms-player-row,.ms-bowl-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f8fafc;}.ms-player-name,.ms-bowl-name{font-size:16px;font-weight:900;text-transform:uppercase;color:var(--text);}.ms-player-name .status{color:var(--bat-color);font-size:11px;margin-left:4px;}.ms-player-stat{font-size:16px;font-weight:700;}.ms-player-stat .main{font-size:20px;font-weight:900;color:var(--text);}.ms-player-stat .balls{color:var(--muted);font-size:14px;}.ms-bowl-fig .w{color:#dc2626;font-size:20px;font-weight:900;}.ms-bowl-fig .r{color:var(--muted);}.ms-gap{height:16px;}.ms-result-banner.win-bat{background:var(--green)!important;}.ms-result-banner.tied{background:var(--muted)!important;}
+.ts-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);border-bottom:4px solid var(--bat-color);width:100%;}.ts-header{display:flex;align-items:center;gap:16px;padding:20px 24px;background:linear-gradient(135deg,var(--bat-color),rgba(0,0,0,0.3));border-bottom:1px solid #e2e8f0;}.ts-logo{width:64px;height:64px;border:3px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}.ts-logo img,.ts-logo svg{width:52px;height:52px;}.ts-team-info{flex:1;}.ts-team-name{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:4px;color:#fff;line-height:1;}.ts-team-sub{font-size:13px;color:rgba(255,255,255,0.7);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:3px;}.ts-tabs{display:flex;}.ts-tab{padding:8px 16px;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);border-radius:8px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:900;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:all .2s;margin-left:6px;}.ts-tab.active{background:#fff;color:var(--bat-color);}.ts-list-header{display:grid;grid-template-columns:36px 1fr 90px;padding:8px 20px;background:#f8fafc;border-bottom:1px solid #e2e8f0;font-size:12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}.ts-player-row{display:grid;grid-template-columns:36px 1fr 90px;align-items:center;padding:10px 20px;border-bottom:1px solid #f1f5f9;}.ts-player-num{color:var(--muted);font-size:15px;}.ts-player-name{font-size:18px;font-weight:900;text-transform:uppercase;color:var(--text);}.ts-player-role{display:flex;align-items:center;}.role-chip{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;background:#f1f5f9;color:var(--muted);}.role-chip.bat{background:#dbeafe;color:#1d4ed8;}.role-chip.bowl{background:#fee2e2;color:#dc2626;}.role-chip.wk{background:#d1fae5;color:#059669;}.role-chip.all{background:#ede9fe;color:#7c3aed;}.ts-footer{padding:12px 20px;text-align:center;background:#f8fafc;border-top:1px solid #e2e8f0;}`;document.head.appendChild(st);
+</script>
+</body>
+</html>
+
+
+
+
+
+

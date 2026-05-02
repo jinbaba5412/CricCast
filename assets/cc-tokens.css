@@ -1,0 +1,268 @@
+/* ════════════════════════════════════════════════════════════════════
+   CricCast — "Pitch" design system tokens
+   Inspired by Sentry/Cohere data-dashboard genre. NO purple.
+   Dark-first, light-mode supported via [data-theme="light"] on <html>.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ─── Theme-agnostic accents ─────────────────────────────────────── */
+:root {
+  --cc-accent-primary:        #10B981;        /* emerald — primary CTA, "live", success */
+  --cc-accent-primary-hover:  #059669;
+  --cc-accent-primary-soft:   rgba(16,185,129,0.12);
+  --cc-accent-primary-ring:   rgba(16,185,129,0.35);
+
+  --cc-accent-amber:          #F59E0B;        /* wickets / gold / highlight */
+  --cc-accent-amber-soft:     rgba(245,158,11,0.14);
+
+  --cc-accent-coral:          #F43F5E;        /* danger / dismissals */
+  --cc-accent-coral-hover:    #E11D48;
+  --cc-accent-coral-soft:     rgba(244,63,94,0.14);
+
+  --cc-accent-cyan:           #06B6D4;        /* data / info / secondary */
+  --cc-accent-cyan-soft:      rgba(6,182,212,0.14);
+
+  /* Severity ladder for badges + ball chips */
+  --cc-sev-info:              #06B6D4;
+  --cc-sev-success:           #10B981;
+  --cc-sev-warn:              #F59E0B;
+  --cc-sev-danger:            #F43F5E;
+  --cc-sev-neutral:           #64748B;
+
+  /* Radii */
+  --cc-r-xs:    4px;
+  --cc-r-sm:    6px;
+  --cc-r-md:    8px;
+  --cc-r-lg:    12px;
+  --cc-r-xl:    16px;
+  --cc-r-pill:  999px;
+
+  /* Spacing scale (4px rhythm) */
+  --cc-s-1:  4px;
+  --cc-s-2:  8px;
+  --cc-s-3:  12px;
+  --cc-s-4:  16px;
+  --cc-s-5:  20px;
+  --cc-s-6:  24px;
+  --cc-s-8:  32px;
+  --cc-s-10: 40px;
+  --cc-s-12: 48px;
+
+  /* Type */
+  --cc-font-ui:      'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --cc-font-display: 'Bebas Neue', 'Inter', system-ui, sans-serif;
+  --cc-font-mono:    'JetBrains Mono', 'SF Mono', 'Consolas', 'Liberation Mono', monospace;
+
+  /* Motion */
+  --cc-ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --cc-dur-fast:    120ms;
+  --cc-dur-base:    200ms;
+  --cc-dur-slow:    320ms;
+}
+
+/* ─── Dark theme (default) — 1:1 mirror of `_design_refs/operations/src/index.css`
+     so the controller-offline + operations consoles share the exact M3 ladder
+     and primary/secondary/tertiary palette as the Stitch / AI-Studio mocks.
+     ──────────────────────────────────────────────────────────────────── */
+:root,
+:root[data-theme="dark"] {
+  /* Surface ladder — copied verbatim from operations theme */
+  --cc-bg-base:        #0e1511;
+  --cc-bg-elevated:    #161d19;
+  --cc-bg-card:        #1a211d;
+  --cc-bg-card-hover:  #242c27;
+  --cc-bg-input:       #09100c;
+  --cc-bg-overlay:     rgba(6, 10, 8, 0.72);
+
+  --cc-surface-lowest:            #09100c;
+  --cc-surface-low:               #0e1511;
+  --cc-surface:                   #0e1511;
+  --cc-surface-container-low:     #161d19;
+  --cc-surface-container:         #1a211d;
+  --cc-surface-container-high:    #242c27;
+  --cc-surface-container-highest: #2f3632;
+  --cc-surface-bright:            #343b36;
+
+  /* Border + outline (operations: outline #86948a, variant #3c4a42) */
+  --cc-border:         #2f3632;
+  --cc-border-strong:  #3c4a42;
+  --cc-border-focus:   var(--cc-accent-primary);
+  --cc-outline:        #86948a;
+  --cc-outline-variant:#3c4a42;
+
+  /* Text — operations on-surface = #dde4dd, on-surface-variant = #bbcabf */
+  --cc-text-primary:   #dde4dd;
+  --cc-text-secondary: #bbcabf;
+  --cc-text-muted:     #86948a;
+  --cc-text-faint:     #5d6961;
+  --cc-text-on-accent: #003824;
+
+  --cc-on-surface:          var(--cc-text-primary);
+  --cc-on-surface-variant:  var(--cc-text-secondary);
+  --cc-on-background:       var(--cc-text-primary);
+
+  /* Primary / Secondary / Tertiary — operations exact */
+  --cc-primary:                  #4edea3;            /* light emerald — text on dark */
+  --cc-on-primary:               #003824;
+  --cc-primary-container:        #10b981;            /* CTA bg */
+  --cc-on-primary-container:     #00422b;
+
+  --cc-secondary:                #4cd7f6;
+  --cc-on-secondary:             #003640;
+  --cc-secondary-container:      #03b5d3;
+  --cc-on-secondary-container:   #00424e;
+
+  --cc-tertiary:                 #ffb3af;
+  --cc-on-tertiary:              #650911;
+  --cc-tertiary-container:       #fc7c78;
+  --cc-on-tertiary-container:    #711419;
+
+  --cc-error:                    #ffb4ab;
+  --cc-on-error:                 #690005;
+  --cc-error-container:          #93000a;
+  --cc-on-error-container:       #ffdad6;
+
+  --cc-shadow-sm:      0 1px 2px rgba(0,0,0,0.4);
+  --cc-shadow-md:      0 4px 12px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.5);
+  --cc-shadow-lg:      0 16px 48px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.4);
+  --cc-shadow-glow:    0 0 0 1px var(--cc-accent-primary-ring), 0 8px 24px rgba(16,185,129,0.22);
+
+  --cc-row-stripe:     rgba(255,255,255,0.018);
+  --cc-row-hover:      rgba(16,185,129,0.06);
+
+  --cc-scroll-thumb:   #3c4a42;
+  --cc-scroll-track:   transparent;
+
+  color-scheme: dark;
+}
+
+/* ─── Light theme — high-contrast surfaces so cards are clearly visible
+     against the body bg. Reference designs are dark-only; this is a bonus
+     mode tuned for legibility. ─────────────────────────────────────── */
+:root[data-theme="light"] {
+  --cc-bg-base:        #F2F4F1;     /* slightly warm grey so white surfaces pop */
+  --cc-bg-elevated:    #FFFFFF;
+  --cc-bg-card:        #FFFFFF;
+  --cc-bg-card-hover:  #F8F9F7;
+  --cc-bg-input:       #FFFFFF;
+  --cc-bg-overlay:     rgba(14, 21, 17, 0.45);
+
+  /* Surface ladder — every step has visible contrast on F2F4F1 body */
+  --cc-surface-lowest:            #FFFFFF;
+  --cc-surface-low:               #FAFBF9;
+  --cc-surface:                   #FFFFFF;
+  --cc-surface-container-low:     #FFFFFF;
+  --cc-surface-container:         #FFFFFF;
+  --cc-surface-container-high:    #F0F2EE;
+  --cc-surface-container-highest: #E5E9E3;
+  --cc-surface-bright:            #FFFFFF;
+
+  --cc-border:         #D8DDD6;     /* visible against #FFFFFF cards */
+  --cc-border-strong:  #B8C0B5;
+  --cc-border-focus:   var(--cc-accent-primary);
+  --cc-outline:        #5d6961;
+  --cc-outline-variant:#C2CAC0;
+
+  --cc-text-primary:   #0F1611;
+  --cc-text-secondary: #2B342E;
+  --cc-text-muted:     #5d6961;
+  --cc-text-faint:     #86948a;
+  --cc-text-on-accent: #FFFFFF;
+
+  --cc-on-surface:         var(--cc-text-primary);
+  --cc-on-surface-variant: var(--cc-text-secondary);
+  --cc-on-background:      var(--cc-text-primary);
+
+  --cc-primary:                #006d49;
+  --cc-on-primary:             #FFFFFF;
+  --cc-primary-container:      #10B981;
+  --cc-on-primary-container:   #FFFFFF;
+
+  --cc-secondary:              #006879;
+  --cc-on-secondary:           #FFFFFF;
+  --cc-secondary-container:    #03b5d3;
+  --cc-on-secondary-container: #FFFFFF;
+
+  --cc-tertiary:               #B91C1C;
+  --cc-tertiary-container:     #FECACA;
+  --cc-on-tertiary-container:  #7F1D1D;
+
+  --cc-error:                  #BA1A1A;
+  --cc-on-error:               #FFFFFF;
+  --cc-error-container:        #FFDAD6;
+  --cc-on-error-container:     #410002;
+
+  /* Stronger card shadow so white-on-greyish-bg cards lift clearly */
+  --cc-shadow-sm:      0 1px 2px rgba(15,22,17,0.08);
+  --cc-shadow-md:      0 4px 12px rgba(15,22,17,0.10), 0 1px 3px rgba(15,22,17,0.06);
+  --cc-shadow-lg:      0 16px 48px rgba(15,22,17,0.16), 0 4px 12px rgba(15,22,17,0.08);
+  --cc-shadow-glow:    0 0 0 3px var(--cc-accent-primary-ring);
+
+  --cc-row-stripe:     rgba(15,22,17,0.030);
+  --cc-row-hover:      rgba(16,185,129,0.08);
+
+  --cc-scroll-thumb:   #B8C0B5;
+  --cc-scroll-track:   transparent;
+
+  color-scheme: light;
+}
+
+/* ─── Auto (system pref) — only when neither dark nor light is set.
+     Mirrors the explicit light block so toggling to "system" on a light
+     OS gives the same legible surface ramp. ────────────────────────── */
+@media (prefers-color-scheme: light) {
+  :root[data-theme="system"] {
+    --cc-bg-base:        #F2F4F1;
+    --cc-bg-elevated:    #FFFFFF;
+    --cc-bg-card:        #FFFFFF;
+    --cc-bg-card-hover:  #F8F9F7;
+    --cc-bg-input:       #FFFFFF;
+    --cc-bg-overlay:     rgba(14, 21, 17, 0.45);
+
+    --cc-surface-lowest:            #FFFFFF;
+    --cc-surface-low:               #FAFBF9;
+    --cc-surface:                   #FFFFFF;
+    --cc-surface-container-low:     #FFFFFF;
+    --cc-surface-container:         #FFFFFF;
+    --cc-surface-container-high:    #F0F2EE;
+    --cc-surface-container-highest: #E5E9E3;
+    --cc-surface-bright:            #FFFFFF;
+
+    --cc-border:         #D8DDD6;
+    --cc-border-strong:  #B8C0B5;
+    --cc-outline:        #5d6961;
+    --cc-outline-variant:#C2CAC0;
+
+    --cc-text-primary:   #0F1611;
+    --cc-text-secondary: #2B342E;
+    --cc-text-muted:     #5d6961;
+    --cc-text-faint:     #86948a;
+    --cc-text-on-accent: #FFFFFF;
+
+    --cc-on-surface:         var(--cc-text-primary);
+    --cc-on-surface-variant: var(--cc-text-secondary);
+    --cc-on-background:      var(--cc-text-primary);
+
+    --cc-primary:                #006d49;
+    --cc-on-primary:             #FFFFFF;
+    --cc-primary-container:      #10B981;
+    --cc-on-primary-container:   #FFFFFF;
+    --cc-secondary:              #006879;
+    --cc-on-secondary:           #FFFFFF;
+    --cc-secondary-container:    #03b5d3;
+    --cc-on-secondary-container: #FFFFFF;
+    --cc-tertiary:               #B91C1C;
+    --cc-tertiary-container:     #FECACA;
+    --cc-on-tertiary-container:  #7F1D1D;
+    --cc-error:                  #BA1A1A;
+    --cc-on-error:               #FFFFFF;
+    --cc-error-container:        #FFDAD6;
+    --cc-on-error-container:     #410002;
+
+    --cc-shadow-sm:      0 1px 2px rgba(15,22,17,0.08);
+    --cc-shadow-md:      0 4px 12px rgba(15,22,17,0.10), 0 1px 3px rgba(15,22,17,0.06);
+    --cc-shadow-lg:      0 16px 48px rgba(15,22,17,0.16), 0 4px 12px rgba(15,22,17,0.08);
+    --cc-row-stripe:     rgba(15,22,17,0.030);
+    --cc-row-hover:      rgba(16,185,129,0.08);
+    color-scheme: light;
+  }
+}

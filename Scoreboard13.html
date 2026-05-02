@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CricCast — SB13: Sky Sports White</title>
+<style type="text/css">@font-face{font-family:Bebas Neue;src:url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B43_3z3b-.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B45_1z3b-.woff2);font-display:swap;}</style>
+<style>
+:root{--gold:#f59e0b;--bat-color:#1e40af;--bowl-color:#7f1d1d;--text:#e2e8f0;--muted:#94a3b8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Barlow Condensed',sans-serif;font-weight:700;background:transparent;color:var(--text);overflow:hidden;}.overlay-wrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:fixed;inset:0;padding:0 0 10px 0;z-index:100;}
+
+
+.broadcast-bar{width:100%;height:80px;background:#fff;border-top:4px solid #003399;display:flex;align-items:center;overflow:visible;box-shadow:0 -4px 20px rgba(0,0,0,0.15);}
+.s-logo{width:80px;height:100%;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:visible;position:relative;}
+.s-bat-bg{height:100%;background:#003399;padding:0 24px 0 16px;display:flex;flex-direction:column;justify-content:center;clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%);margin-right:-16px;z-index:2;min-width:220px;flex-shrink:0;}
+.s-p{font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:0.5px;color:var(--gold);}
+.s-ps{font-size:14px;color:rgba(255,255,255,0.7);}
+.s-mid{width:320px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;background:#000;clip-path:polygon(16px 0,calc(100% - 16px) 0,100% 100%,0 100%);margin:0 -16px;z-index:3;padding:0 32px;}
+.s-score{font-family:"Bebas Neue",sans-serif;font-size:46px;color:#fff;letter-spacing:2px;line-height:1;}
+.s-ov{font-size:13px;color:var(--gold);letter-spacing:2px;}
+.s-bowl-bg{flex:1;height:100%;background:#111827;padding:0 24px 0 32px;display:flex;align-items:center;gap:20px;clip-path:polygon(16px 0,100% 0,100% 100%,0 100%);margin-left:-16px;z-index:2;}
+.s-bl{display:flex;flex-direction:column;gap:2px;}
+.s-bl-label{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase;}
+.s-bl-val{font-size:17px;color:#fff;font-weight:900;text-transform:uppercase;}
+
+</style>
+</head>
+<body>
+<div class="overlay-wrap" id="master-wrap" style="display:none;">
+  <div class="broadcast-bar" id="master-broadcast-bar" style="display:none;">
+
+    <div class="s-logo" id="s-ll" style="background:#003399;"></div>
+    <div class="s-bat-bg">
+      <div class="s-p" id="s-p1">STRIKER</div><div class="s-ps" id="s-p1s">0 (0)</div>
+      <div class="s-p" style="color:rgba(255,255,255,0.7);" id="s-p2">NON-STR</div><div class="s-ps" id="s-p2s">0 (0)</div>
+    </div>
+    <div class="s-mid">
+      <div class="s-score"><span id="s-nick" style="font-size:26px;color:var(--gold);margin-right:8px;"></span><span id="s-rw">0/0</span></div>
+      <div class="s-ov" id="s-ov">OVERS 0.0</div>
+    </div>
+    <div class="s-bowl-bg">
+      <div class="s-bl"><div class="s-bl-label">Bowler</div><div class="s-bl-val" id="s-bwl">—</div></div>
+      <div class="s-bl"><div class="s-bl-label">Figures</div><div class="s-bl-val" id="s-bwlf" style="color:var(--gold);">0-0</div></div>
+      <div class="s-bl" id="s-tgt-b" style="display:none;"><div class="s-bl-label">Target</div><div class="s-bl-val" id="s-tgt" style="color:#fca5a5;"></div></div>
+      <div class="s-bl" id="s-rrr-b" style="display:none;"><div class="s-bl-label">RRR</div><div class="s-bl-val" id="s-rrr" style="color:#fca5a5;"></div></div>
+      <div style="margin-left:auto;display:flex;gap:4px;" id="s-over"></div>
+    </div>
+    <div class="s-logo" id="s-lr" style="background:#111827;"></div>
+
+  </div>
+  <div id="innings-card" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:900px;max-width:calc(100vw - 40px);"></div>
+  <div id="match-summary-card" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:1000px;max-width:calc(100vw - 40px);"></div>
+  <div id="team-sheet-card" data-active-tab="bat" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:30;width:800px;max-width:calc(100vw - 40px);"></div>
+</div>
+<script src="scoreboard-core-offline.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/EasePack.min.js"></script>
+<script src="vendor/confetti.min.js"></script>
+<script src="BroadcastEvents.js"></script>
+<script>
+
+function renderBroadcastBar(m,t){
+  const bat=t.find(x=>x.id===m.batTeamId),bowl=t.find(x=>x.id===m.bowlTeamId);
+  document.documentElement.style.setProperty('--bat-color',m.batColor||'#003399');
+  document.getElementById('s-ll').style.background=m.batColor||'#003399';
+  document.querySelector('.s-bat-bg').style.background=m.batColor||'#003399';
+  document.getElementById('s-ll').innerHTML='';
+  document.getElementById('s-lr').innerHTML='';
+  document.getElementById('s-nick').textContent=bat?(bat.shortName||bat.name.substring(0,3).toUpperCase()):'';
+  document.getElementById('s-rw').textContent=`${m.runs||0}/${m.wickets||0}`;
+  // Wave 7.2 — drop INN prefix; target indicator already conveys innings.
+  document.getElementById('s-ov').textContent=`OVERS ${Math.floor((m.balls||0)/6)}.${(m.balls||0)%6}`;
+  document.getElementById('s-p1').textContent=(m||matchData)?.p1?.name||'STRIKER';{const _o=(m||matchData)?.batsmanStats?.[(m||matchData)?.p1?.name]?.out;const _e=document.getElementById('s-p1');if(_e)_e.style.color=_o?'rgba(255,255,255,0.32)':'';}
+  document.getElementById('s-p1s').textContent=`${m.p1?.runs||0} (${m.p1?.balls||0})`;
+  document.getElementById('s-p2').textContent=m.p2?.name||'NON-STR';
+  document.getElementById('s-p2s').textContent=`${m.p2?.runs||0} (${m.p2?.balls||0})`;
+  document.getElementById('s-bwl').textContent=(m.bowler||'—').toUpperCase();
+  document.getElementById('s-bwlf').textContent=`${m.bowlerWickets||0}-${m.bowlerRuns||0}`;
+  const i2=m.inning===2;
+  document.getElementById('s-tgt-b').style.display=i2?'':'none';
+  document.getElementById('s-rrr-b').style.display=i2?'':'none';
+  if(i2){document.getElementById('s-tgt').textContent=m.target||0;const r=Math.max(0,(m.target||0)-(m.runs||0)),b=(m.maxOvers*6)-(m.balls||0);document.getElementById('s-rrr').textContent=b>0?(r/(b/6)).toFixed(2):'0.00';}
+  document.getElementById('s-over').innerHTML=(m.thisOverBalls||[]).slice(-6).map(b=>`<div style="width:22px;height:22px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;">${b}</div>`).join('');
+}
+
+</script>
+</body>
+</html>

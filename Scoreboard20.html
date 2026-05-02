@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CricCast — SB20: Full-Width Ticker Bar</title>
+<style type="text/css">@font-face{font-family:Bebas Neue;src:url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B43_3z3b-.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B45_1z3b-.woff2);font-display:swap;}</style>
+<style>
+:root{--bat-color:#1a3a6e;--gold:#f59e0b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Barlow Condensed',sans-serif;font-weight:700;background:transparent;color:#fff;overflow:hidden;}.overlay-wrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:fixed;inset:0;padding:0 0 10px 0;z-index:100;}
+
+.wrap{position:fixed;bottom:0;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;}
+
+/* Top bar */
+.top-bar{height:52px;background:var(--bat-color);display:flex;align-items:stretch;}
+
+.tb-logo{width:64px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);flex-shrink:0;}
+.tb-score-area{display:flex;align-items:center;gap:12px;padding:0 18px;flex-shrink:0;}
+.tb-team{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--gold);}
+.tb-score{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#fff;letter-spacing:2px;}
+.tb-ov{font-size:14px;color:rgba(255,255,255,0.4);letter-spacing:1px;}
+.tb-vsep{width:1px;height:32px;background:rgba(255,255,255,0.2);}
+
+.tb-players{flex:1;display:flex;align-items:center;gap:0;padding:0 16px;gap:16px;}
+.tp{display:flex;align-items:center;gap:6px;}
+.tp-arrow{width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:6px solid var(--gold);}
+.tp-name{font-size:14px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#fff;}
+.tp-stat{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);letter-spacing:1px;}
+.tp-balls{font-size:12px;color:rgba(255,255,255,0.4);}
+.tp-vsep{width:1px;height:28px;}
+
+.tb-right{display:flex;align-items:center;gap:0;margin-left:auto;}
+.tb-over-area{display:flex;align-items:center;gap:4px;padding:0 14px;border-left:1px solid rgba(255,255,255,0.1);}
+.ob{width:24px;height:24px;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+.ob.is4{background:rgba(5,120,60,0.7);border-color:#059669;color:#6ee7b7;}
+.ob.is6{background:rgba(13,78,74,0.7);border-color:#0d9488;color:#5eead4;}
+.ob.isW{background:rgba(180,20,20,0.7);border-color:#dc2626;color:#fca5a5;}
+.ob.isX{background:rgba(40,35,30,0.7);border-color:#57534e;color:#d6d3d1;}
+.ob.isSB{background:rgba(200,245,20,0.2);border-color:#c8f514;color:#c8f514;}
+.ob.empty{opacity:0.2;}
+.tb-opp{display:flex;align-items:center;gap:8px;padding:0 14px;border-left:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+.tb-opp-label{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:2px;}
+.tb-opp-logo{width:36px;}
+
+/* Bottom info bar */
+.bot-bar{height:28px;background:#060e1e;display:flex;align-items:center;padding:0 14px;gap:0;border-top:2px solid var(--gold);}
+.bi{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;}
+.bi b{color:#fff;font-weight:900;}
+.bi-sep{width:1px;height:14px;background:rgba(255,255,255,0.12);margin:0 14px;}
+.bi-bowl{display:flex;align-items:center;gap:8px;}
+.bi-ball-icon{width:12px;height:12px;}
+.bi-tgt{color:#fca5a5 !important;}
+</style>
+</head>
+<body>
+<div id="master-wrap" style="display:none;">
+  <div id="master-broadcast-bar" class="wrap">
+
+    <div class="top-bar">
+      <div class="tb-logo" id="sb20-logo"></div>
+      <div class="tb-score-area">
+        <span class="tb-team" id="sb20-team">—</span>
+        <span class="tb-score" id="sb20-score">0/0</span>
+        <span class="tb-ov" id="sb20-ov">0.0</span>
+      </div>
+      <div class="tb-vsep"></div>
+      <div class="tb-players">
+        <div class="tp">
+          <div class="tp-arrow"></div>
+          <span class="tp-name" id="sb20-p1">—</span>
+          <span class="tp-stat" id="sb20-p1r">0</span>
+          <span class="tp-balls" id="sb20-p1b">(0)</span>
+        </div>
+        <div class="tp-vsep"></div>
+        <div class="tp" style="opacity:0.6;">
+          <span class="tp-name" id="sb20-p2">—</span>
+          <span class="tp-stat" id="sb20-p2r">0</span>
+          <span class="tp-balls" id="sb20-p2b">(0)</span>
+        </div>
+      </div>
+      <div class="tb-right">
+        <div class="tb-over-area" id="sb20-over"></div>
+        <div class="tb-opp">
+          <span class="tb-opp-label">v</span>
+          <div class="tb-opp-logo" id="sb20-opplogo"></div>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;" id="sb20-opp">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bot-bar">
+      <span class="bi">INN <b id="sb20-inn">1</b></span>
+      <div class="bi-sep"></div>
+      <span class="bi">CRR <b id="sb20-crr">0.00</b></span>
+      <div class="bi-sep"></div>
+      <span class="bi bi-bowl">
+        <svg class="bi-ball-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+        <b id="sb20-bowl">—</b> &nbsp; <span id="sb20-fig" style="color:var(--gold);">0-0</span>
+      </span>
+      <div class="bi-sep" id="sb20-tgtsep" style="display:none;"></div>
+      <span class="bi bi-tgt" id="sb20-tgtrow" style="display:none;">TGT <b style="color:#fca5a5;" id="sb20-tgt">0</b></span>
+    </div>
+
+  </div>
+  <div id="innings-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:900px;max-width:calc(100vw - 40px);"></div>
+  <div id="match-summary-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:1000px;max-width:calc(100vw - 40px);"></div>
+  <div id="team-sheet-card" data-active-tab="bat" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:30;width:800px;max-width:calc(100vw - 40px);"></div>
+</div>
+<script src="scoreboard-core-offline.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/EasePack.min.js"></script>
+<script src="vendor/confetti.min.js"></script>
+<script src="BroadcastEvents.js"></script>
+<script>
+function bc(b){const s=String(b);if(s==='W'||s==='W-5')return 'ob isW';if(s==='4')return 'ob is4';if(s==='6')return 'ob is6';if(s==='SB')return 'ob isSB';if(/^(Wd|Nb|B|Lb)/.test(s))return 'ob isX';return 'ob';}
+function renderBroadcastBar(m,t){
+  const bat=t.find(x=>x.id===m.batTeamId);
+  const bowl=t.find(x=>x.id===m.bowlTeamId);
+  document.documentElement.style.setProperty('--bat-color',m.batColor||'#1a3a6e');
+  document.documentElement.style.setProperty('--gold',m.bowlColor||'#f59e0b');
+  document.getElementById('sb20-logo').innerHTML='';
+  document.getElementById('sb20-opplogo').innerHTML='';
+  document.getElementById('sb20-team').textContent=bat?(bat.shortName||bat.name.substring(0,3).toUpperCase()):'—';
+  document.getElementById('sb20-opp').textContent=bowl?(bowl.shortName||bowl.name.substring(0,3).toUpperCase()):'—';
+  document.getElementById('sb20-score').textContent=`${m.runs||0}/${m.wickets||0}`;
+  const ov=Math.floor((m.balls||0)/6),bl=(m.balls||0)%6;
+  document.getElementById('sb20-ov').textContent=`${ov}.${bl}`;
+  document.getElementById('sb20-p1').textContent=(m||matchData)?.p1?.name||'STRIKER';{const _o=(m||matchData)?.batsmanStats?.[(m||matchData)?.p1?.name]?.out;const _e=document.getElementById('sb20-p1');if(_e)_e.style.color=_o?'rgba(255,255,255,0.32)':'';}
+  document.getElementById('sb20-p1r').textContent=m.p1?.runs||0;
+  document.getElementById('sb20-p1b').textContent=`(${m.p1?.balls||0})`;
+  document.getElementById('sb20-p2').textContent=m.p2?.name||'—';
+  document.getElementById('sb20-p2r').textContent=m.p2?.runs||0;
+  document.getElementById('sb20-p2b').textContent=`(${m.p2?.balls||0})`;
+  document.getElementById('sb20-inn').textContent=m.inning||1;
+  const crr=m.balls>0?((m.runs||0)/(m.balls/6)).toFixed(2):'0.00';
+  document.getElementById('sb20-crr').textContent=crr;
+  document.getElementById('sb20-bowl').textContent=(m.bowler||'—').toUpperCase();
+  document.getElementById('sb20-fig').textContent=`${m.bowlerWickets||0}-${m.bowlerRuns||0}`;
+  const st=m.inning===2;
+  document.getElementById('sb20-tgtsep').style.display=st?'block':'none';
+  document.getElementById('sb20-tgtrow').style.display=st?'inline':'none';
+  if(st) document.getElementById('sb20-tgt').textContent=m.target||0;
+  const balls=(m.thisOverBalls||[]).slice(-6);
+  const emp=Math.max(0,6-balls.length);
+  document.getElementById('sb20-over').innerHTML=balls.map(b=>`<div class="${bc(b)}">${b}</div>`).join('')+Array(emp).fill('<div class="ob empty"></div>').join('');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CricCast — SB18: IPL Red-Blue Split Bar</title>
+<style type="text/css">@font-face{font-family:Bebas Neue;src:url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B43_3z3b-.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B45_1z3b-.woff2);font-display:swap;}</style>
+<style>
+:root{--bat-color:#b91c1c;--bowl-color:#1e3a8a;--gold:#fbbf24;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Barlow Condensed',sans-serif;font-weight:700;background:transparent;color:#fff;overflow:hidden;}.overlay-wrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:fixed;inset:0;padding:0 0 10px 0;z-index:100;}
+
+.wrap{position:fixed;bottom:0;left:0;right:0;height:68px;display:flex;align-items:stretch;}
+
+/* Team score left */
+.left-block{background:var(--bat-color);display:flex;align-items:center;padding:0 20px;gap:10px;flex-shrink:0;}
+.left-logo{width:42px;height:42px;flex-shrink:0;}
+.left-info{display:flex;flex-direction:column;}
+.left-team{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.6);text-transform:uppercase;}
+.left-score{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#fff;letter-spacing:2px;line-height:1;}
+.left-ovr{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:1px;}
+
+/* Score number */
+.score-num{background:rgba(0,0,0,0.5);padding:0 12px;display:flex;align-items:center;}
+.big-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--gold);letter-spacing:2px;}
+
+/* Middle: players */
+.mid-block{background:#111827;flex:1;display:flex;align-items:center;padding:0 16px;gap:12px;border-top:3px solid var(--gold);}
+.mid-sep{width:1px;height:36px;}
+.player-col{display:flex;flex-direction:column;gap:2px;}
+.p-head{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.35);text-transform:uppercase;}
+.p-name{font-size:15px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#fff;}
+.p-stat{font-size:18px;font-family:'Bebas Neue',sans-serif;color:var(--gold);letter-spacing:1px;}
+.p-balls{font-size:12px;color:rgba(255,255,255,0.35);}
+
+/* RR block */
+.rr-block{background:#111827;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 14px;border-left:1px solid rgba(255,255,255,0.07);flex-shrink:0;}
+.rr-label{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.35);text-transform:uppercase;}
+.rr-val{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:1px;}
+
+/* Bowl info */
+.bowl-block{background:var(--bowl-color);display:flex;align-items:center;padding:0 14px;gap:8px;flex-shrink:0;}
+.bowl-inner{display:flex;flex-direction:column;}
+.bowl-label{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.5);text-transform:uppercase;}
+.bowl-name{font-size:14px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#fff;}
+.bowl-fig{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);letter-spacing:1px;}
+
+/* Over dots */
+.od-row{display:flex;flex-direction:column;gap:3px;padding:0 12px;border-left:1px solid rgba(255,255,255,0.1);}
+.od-label{font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.3);text-transform:uppercase;}
+.od-balls{display:flex;gap:3px;}
+.od{width:20px;height:20px;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:9px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+.od.is4{background:rgba(5,120,60,0.7);border-color:#059669;color:#6ee7b7;}
+.od.is6{background:rgba(13,78,74,0.7);border-color:#0d9488;color:#5eead4;}
+.od.isW{background:rgba(180,20,20,0.7);border-color:#dc2626;color:#fca5a5;}
+.od.isX{background:rgba(40,35,30,0.7);border-color:#57534e;color:#d6d3d1;}
+.od.isSB{background:rgba(200,245,20,0.2);border-color:#c8f514;color:#c8f514;}
+.od.empty{opacity:0.2;}
+
+/* standings tag */
+.stand-tag{font-size:11px;background:rgba(0,0,0,0.4);border-radius:3px;padding:1px 5px;color:rgba(255,255,255,0.5);}
+</style>
+</head>
+<body>
+<div id="master-wrap" style="display:none;">
+  <div id="master-broadcast-bar" class="wrap">
+
+    <div class="left-block">
+      <div class="left-info">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span class="left-team" id="sb18-team">RCB</span>
+          <!-- Wave 7.2 — innings tag hidden; target presence already implies 2nd innings. -->
+          <span class="stand-tag" id="sb18-inn" style="display:none;"></span>
+        </div>
+        <div class="left-score" id="sb18-score">0/0</div>
+        <div class="left-ovr" id="sb18-overs">0.0 OVS</div>
+      </div>
+    </div>
+
+    <div class="mid-block">
+      <div class="player-col">
+        <div class="p-head">Striker</div>
+        <div class="p-name" id="sb18-p1">—</div>
+        <div><span class="p-stat" id="sb18-p1r">0</span>&ensp;<span class="p-balls" id="sb18-p1b">(0)</span></div>
+      </div>
+      <div class="mid-sep"></div>
+      <div class="player-col">
+        <div class="p-head" style="color:rgba(255,255,255,0.2);">Non-Str</div>
+        <div class="p-name" style="color:rgba(255,255,255,0.5);" id="sb18-p2">—</div>
+        <div><span class="p-stat" style="color:rgba(255,255,255,0.4);" id="sb18-p2r">0</span>&ensp;<span class="p-balls" id="sb18-p2b">(0)</span></div>
+      </div>
+    </div>
+
+    <div class="rr-block">
+      <div class="rr-label">Run Rate</div>
+      <div class="rr-val" id="sb18-rr">0.00</div>
+      <div id="sb18-tgt" style="display:none;font-size:11px;color:#fca5a5;letter-spacing:1px;">TGT: <span id="sb18-tgtval">0</span></div>
+    </div>
+
+    <div class="bowl-block">
+      <div class="bowl-inner">
+        <div class="bowl-label">Bowler</div>
+        <div class="bowl-name" id="sb18-bowl">—</div>
+        <div><span class="bowl-fig" id="sb18-fig">0-0</span>&ensp;<span style="font-size:11px;color:rgba(255,255,255,0.4);" id="sb18-bov">0.0</span></div>
+      </div>
+    </div>
+
+    <div class="od-row">
+      <div class="od-label">This Over</div>
+      <div class="od-balls" id="sb18-over"></div>
+    </div>
+
+  </div>
+  <div id="innings-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:900px;max-width:calc(100vw - 40px);"></div>
+  <div id="match-summary-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:1000px;max-width:calc(100vw - 40px);"></div>
+  <div id="team-sheet-card" data-active-tab="bat" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:30;width:800px;max-width:calc(100vw - 40px);"></div>
+</div>
+<script src="scoreboard-core-offline.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/EasePack.min.js"></script>
+<script src="vendor/confetti.min.js"></script>
+<script src="BroadcastEvents.js"></script>
+<script>
+function bc(b){const s=String(b);if(s==='W'||s==='W-5')return 'od isW';if(s==='4')return 'od is4';if(s==='6')return 'od is6';if(s==='SB')return 'od isSB';if(/^(Wd|Nb|B|Lb)/.test(s))return 'od isX';return 'od';}
+function renderBroadcastBar(m,t){
+  const bat=t.find(x=>x.id===m.batTeamId);
+  document.documentElement.style.setProperty('--bat-color',m.batColor||'#b91c1c');
+  document.documentElement.style.setProperty('--bowl-color',m.bowlColor||'#1e3a8a');
+  document.getElementById('sb18-team').textContent=bat?(bat.shortName||bat.name.substring(0,3).toUpperCase()):'—';
+  // Wave 7.2 — innings tag hidden in markup; only OVERS X.Y is shown.
+  document.getElementById('sb18-score').textContent=`${m.runs||0}/${m.wickets||0}`;
+  const ov=Math.floor((m.balls||0)/6),bl=(m.balls||0)%6;
+  document.getElementById('sb18-overs').textContent=`OVERS ${ov}.${bl}`;
+  document.getElementById('sb18-p1').textContent=(m||matchData)?.p1?.name||'STRIKER';{const _o=(m||matchData)?.batsmanStats?.[(m||matchData)?.p1?.name]?.out;const _e=document.getElementById('sb18-p1');if(_e)_e.style.color=_o?'rgba(255,255,255,0.32)':'';}
+  document.getElementById('sb18-p1r').textContent=m.p1?.runs||0;
+  document.getElementById('sb18-p1b').textContent=`(${m.p1?.balls||0})`;
+  document.getElementById('sb18-p2').textContent=m.p2?.name||'—';
+  document.getElementById('sb18-p2r').textContent=m.p2?.runs||0;
+  document.getElementById('sb18-p2b').textContent=`(${m.p2?.balls||0})`;
+  const crr=m.balls>0?((m.runs||0)/(m.balls/6)).toFixed(2):'0.00';
+  document.getElementById('sb18-rr').textContent=crr;
+  document.getElementById('sb18-bowl').textContent=(m.bowler||'—').toUpperCase();
+  document.getElementById('sb18-fig').textContent=`${m.bowlerWickets||0}-${m.bowlerRuns||0}`;
+  const bBalls=m.bowlerStats?.[m.bowler]?.balls||0;
+  document.getElementById('sb18-bov').textContent=`${Math.floor(bBalls/6)}.${bBalls%6}`;
+  const st=m.inning===2;
+  document.getElementById('sb18-tgt').style.display=st?'block':'none';
+  if(st) document.getElementById('sb18-tgtval').textContent=m.target||0;
+  const balls=(m.thisOverBalls||[]).slice(-6);
+  const emp=Math.max(0,6-balls.length);
+  document.getElementById('sb18-over').innerHTML=balls.map(b=>`<div class="${bc(b)}">${b}</div>`).join('')+Array(emp).fill('<div class="od empty"></div>').join('');
+}
+</script>
+</body>
+</html>

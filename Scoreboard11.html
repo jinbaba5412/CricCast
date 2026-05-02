@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CricCast — SB11: ESPN Slim Bottom Bar</title>
+<style type="text/css">@font-face{font-family:Bebas Neue;src:url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B43_3z3b-.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B45_1z3b-.woff2);font-display:swap;}</style>
+<style>
+:root{--gold:#f59e0b;--bat-color:#1e40af;--bowl-color:#7f1d1d;--text:#e2e8f0;--muted:#94a3b8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Barlow Condensed',sans-serif;font-weight:700;background:transparent;color:var(--text);overflow:hidden;}.overlay-wrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:fixed;inset:0;padding:0 0 10px 0;z-index:100;}
+
+
+.broadcast-bar{width:100%;height:64px;background:#1a1a2e;border-top:3px solid var(--gold);display:flex;align-items:center;gap:0;overflow:visible;}
+.e-logo{width:64px;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bat-color);flex-shrink:0;font-size:11px;font-weight:900;letter-spacing:1px;color:#fff;text-transform:uppercase;overflow:visible;position:relative;}
+.e-score{padding:0 20px;display:flex;align-items:center;gap:10px;height:100%;border-right:1px solid rgba(255,255,255,0.1);}
+.e-runs{font-family:'Bebas Neue',sans-serif;font-size:38px;color:#fff;letter-spacing:2px;}
+.e-overs{font-size:13px;color:var(--gold);letter-spacing:1px;}
+.e-bat{display:flex;flex-direction:column;gap:2px;padding:0 18px;height:100%;justify-content:center;border-right:1px solid rgba(255,255,255,0.08);}
+.e-bname{font-size:15px;font-weight:900;text-transform:uppercase;color:var(--gold);}
+.e-bname.ns{color:rgba(255,255,255,0.6);}
+.e-bstat{font-size:13px;color:rgba(255,255,255,0.5);}
+.e-bowl{flex:1;display:flex;align-items:center;padding:0 18px;gap:14px;}
+.e-bwl-label{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+.e-bwl-name{font-size:16px;font-weight:900;color:#fff;}
+.e-thisover{display:flex;gap:4px;margin-left:auto;padding-right:16px;}
+.e-ball{width:22px;height:22px;background:#fff;color:#000;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+.e-winner{flex:1;display:none;align-items:center;justify-content:center;gap:16px;padding:0 20px;}
+.e-winner .wt{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);letter-spacing:2px;}
+
+</style>
+</head>
+<body>
+<div class="overlay-wrap" id="master-wrap" style="display:none;">
+  <div class="broadcast-bar" id="master-broadcast-bar" style="display:none;">
+
+    <div class="e-logo" id="e-logo-l"></div>
+    <div class="e-score">
+      <div>
+        <div class="e-runs"><span id="e-nick" style="color:var(--gold);font-size:22px;margin-right:8px;"></span><span id="e-rw">0/0</span></div>
+        <div class="e-overs" id="e-overs">OVERS 0.0</div>
+      </div>
+    </div>
+    <div class="e-bat">
+      <div class="e-bname" id="e-p1"></div><div class="e-bstat" id="e-p1s"></div>
+    </div>
+    <div class="e-bat">
+      <div class="e-bname ns" id="e-p2"></div><div class="e-bstat" id="e-p2s"></div>
+    </div>
+    <div class="e-bowl">
+      <div><div class="e-bwl-label">BOWLER</div><div class="e-bwl-name" id="e-bwl"></div></div>
+      <div><div class="e-bwl-label">FIGURES</div><div class="e-bwl-name" id="e-bwlf" style="color:var(--gold);"></div></div>
+      <div id="e-target" style="display:none;"><div class="e-bwl-label">TARGET</div><div class="e-bwl-name" id="e-tgt" style="color:#fca5a5;"></div></div>
+      <div id="e-rrr" style="display:none;"><div class="e-bwl-label">RRR</div><div class="e-bwl-name" id="e-rrrv" style="color:#fca5a5;"></div></div>
+      <div class="e-thisover" id="e-over"></div>
+    </div>
+    <div class="e-winner" id="e-winner">
+      <div class="wt" id="e-wt">TEAM WINS</div>
+      <div style="font-size:16px;color:#fff;font-weight:900;" id="e-ws">BY RUNS</div>
+    </div>
+    <div class="e-logo" id="e-logo-r" style="background:var(--bowl-color);"></div>
+
+  </div>
+  <div id="innings-card" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:900px;max-width:calc(100vw - 40px);"></div>
+  <div id="match-summary-card" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:1000px;max-width:calc(100vw - 40px);"></div>
+  <div id="team-sheet-card" data-active-tab="bat" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:30;width:800px;max-width:calc(100vw - 40px);"></div>
+</div>
+<script src="scoreboard-core-offline.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/EasePack.min.js"></script>
+<script src="vendor/confetti.min.js"></script>
+<script src="BroadcastEvents.js"></script>
+<script>
+
+function renderBroadcastBar(m,t){
+  const bat=t.find(x=>x.id===m.batTeamId),bowl=t.find(x=>x.id===m.bowlTeamId);
+  document.documentElement.style.setProperty('--bat-color',m.batColor||'#1e40af');
+  document.documentElement.style.setProperty('--bowl-color',m.bowlColor||'#7f1d1d');
+  document.getElementById('e-logo-l').innerHTML='';
+  document.getElementById('e-logo-r').innerHTML='';
+  document.getElementById('e-logo-r').style.background=m.bowlColor||'#7f1d1d';
+  document.querySelector('.e-score').style.borderColor=m.batColor||'#1e40af';
+  if(m.isFinished){
+    document.querySelector('.e-bat').closest('.broadcast-bar').querySelector('.e-bowl').style.display='none';
+    document.getElementById('e-winner').style.display='flex';
+    document.getElementById('e-wt').textContent=m.winner.toUpperCase();
+    document.getElementById('e-ws').textContent=(m.winDesc||'').toUpperCase();
+    return;
+  }
+  document.getElementById('e-winner').style.display='none';
+  document.getElementById('e-nick').textContent=bat?(bat.shortName||bat.name.substring(0,3).toUpperCase()):'';
+  document.getElementById('e-rw').textContent=`${m.runs||0}/${m.wickets||0}`;
+  /* Wave 7.2d — drop the "1ST INN / 2ND INN" prefix; the over
+     count alone is the canonical state representation. */
+  const ov=`${Math.floor((m.balls||0)/6)}.${(m.balls||0)%6}`;
+  document.getElementById('e-overs').textContent=`OVERS ${ov}`;
+  document.getElementById('e-p1').textContent=(m||matchData)?.p1?.name||'STRIKER';{const _o=(m||matchData)?.batsmanStats?.[(m||matchData)?.p1?.name]?.out;const _e=document.getElementById('e-p1');if(_e)_e.style.color=_o?'rgba(255,255,255,0.32)':'';}
+  document.getElementById('e-p1s').textContent=`${m.p1?.runs||0} (${m.p1?.balls||0})`;
+  document.getElementById('e-p2').textContent=m.p2?.name||'';
+  document.getElementById('e-p2s').textContent=`${m.p2?.runs||0} (${m.p2?.balls||0})`;
+  document.getElementById('e-bwl').textContent=(m.bowler||'—').toUpperCase();
+  document.getElementById('e-bwlf').textContent=`${m.bowlerWickets||0}-${m.bowlerRuns||0}`;
+  const show2=(m.inning===2);
+  document.getElementById('e-target').style.display=show2?'':'none';
+  document.getElementById('e-rrr').style.display=show2?'':'none';
+  if(show2){document.getElementById('e-tgt').textContent=m.target||0;const r=Math.max(0,(m.target||0)-(m.runs||0)),b=(m.maxOvers*6)-(m.balls||0);document.getElementById('e-rrrv').textContent=b>0?(r/(b/6)).toFixed(2):'0.00';}
+  document.getElementById('e-over').innerHTML=(m.thisOverBalls||[]).slice(-6).map(b=>`<div class="e-ball">${b}</div>`).join('')||'';
+}
+
+</script>
+</body>
+</html>

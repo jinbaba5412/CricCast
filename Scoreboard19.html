@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CricCast — SB19: Live Match Bar</title>
+<style type="text/css">@font-face{font-family:Bebas Neue;src:url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B43_3z3b-.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B45_1z3b-.woff2);font-display:swap;}</style>
+<style>
+:root{--gold:#f59e0b;--bat-color:#c8f514;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Barlow Condensed',sans-serif;font-weight:700;background:transparent;color:#fff;overflow:hidden;}.overlay-wrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:fixed;inset:0;padding:0 0 10px 0;z-index:100;}
+
+.wrap{position:fixed;bottom:0;left:0;right:0;height:68px;display:flex;align-items:stretch;}
+
+/* Angled team+score block — exact match to landing page demo bar */
+.team-block{
+  background:var(--bat-color);
+  display:flex;align-items:center;
+  padding:0 28px 0 18px;
+  clip-path:polygon(0 0,calc(100% - 14px) 0,100% 100%,0 100%);
+  flex-shrink:0;min-width:190px;
+}
+.team-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:#0b1628;line-height:1;}
+.inn-badge{font-size:11px;background:rgba(0,0,0,0.2);color:#0b1628;padding:2px 6px;letter-spacing:1px;font-weight:900;border-radius:2px;}
+.team-score{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#0b1628;letter-spacing:2px;line-height:1;}
+.team-overs{font-size:17px;color:rgba(0,0,0,0.5);font-family:'Bebas Neue',sans-serif;margin-left:4px;}
+
+/* Dark middle — batsmen */
+.mid-block{flex:1;background:#0b1628;display:flex;align-items:center;gap:16px;padding:0 20px;border-top:3px solid var(--gold);}
+.mid-sep{width:1px;height:36px;background:rgba(255,255,255,0.1);}
+.player{display:flex;flex-direction:column;gap:1px;}
+.p-dot{display:inline-block;width:6px;height:6px;background:var(--gold);margin-right:5px;vertical-align:middle;border-radius:50%;}
+.pname{font-size:13px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#fff;white-space:nowrap;}
+.pstat{font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:1px;line-height:1;}
+.pballs{font-size:13px;color:rgba(255,255,255,0.35);margin-left:3px;}
+
+/* Right stats */
+.right-block{background:#0b1628;display:flex;align-items:center;border-top:3px solid var(--gold);}
+.rr-block{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 16px;border-left:1px solid rgba(255,255,255,0.07);}
+.rr-label{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;}
+.rr-val{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold);letter-spacing:1px;}
+.bowl-block{display:flex;flex-direction:column;justify-content:center;padding:0 16px;border-left:1px solid rgba(255,255,255,0.07);gap:2px;}
+.bowl-label{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;}
+.bowl-name{font-size:13px;font-weight:900;letter-spacing:1px;color:#fff;text-transform:uppercase;white-space:nowrap;}
+.bowl-fig{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);letter-spacing:1px;line-height:1;}
+.bowl-ov{font-size:12px;color:rgba(255,255,255,0.35);margin-left:4px;}
+.over-block{display:flex;align-items:center;gap:3px;padding:0 16px;border-left:1px solid rgba(255,255,255,0.07);}
+.ob{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;font-family:'Barlow Condensed',sans-serif;}
+.ob-0{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.4);}
+.ob-4{background:rgba(5,120,60,0.6);border:1px solid #059669;color:#6ee7b7;}
+.ob-6{background:rgba(13,78,74,0.6);border:1px solid #0d9488;color:#5eead4;}
+.ob-W{background:rgba(180,20,20,0.6);border:1px solid #dc2626;color:#fca5a5;}
+.ob-X{background:rgba(40,35,30,0.6);border:1px solid #57534e;color:#d6d3d1;}
+.ob-SB{background:rgba(200,245,20,0.2);border:1px solid #c8f514;color:#c8f514;}
+.ob-e{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);color:transparent;}
+.tgt-block{display:none;flex-direction:column;align-items:center;justify-content:center;padding:0 14px;border-left:1px solid rgba(255,255,255,0.07);}
+.tgt-label{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;}
+.tgt-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fca5a5;letter-spacing:1px;}
+
+/* Winner overlay inside mid-block */
+.win-block{display:none;align-items:center;gap:14px;}
+.win-txt{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold);letter-spacing:2px;}
+.win-sub{font-size:15px;font-weight:900;color:#fff;}
+</style>
+</head>
+<body>
+<div id="master-wrap" style="display:none;">
+  <div id="master-broadcast-bar" class="wrap">
+
+    <div class="team-block">
+      <div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;">
+          <span class="team-name" id="sb19-team">—</span>
+          <span class="inn-badge" id="sb19-inn">1ST</span>
+        </div>
+        <div style="display:flex;align-items:baseline;">
+          <span class="team-score" id="sb19-score">0/0</span>
+          <span class="team-overs" id="sb19-overs"> 0.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mid-block">
+      <div class="player" id="sb19-p1wrap">
+        <div class="pname"><span class="p-dot"></span><span id="sb19-p1">—</span></div>
+        <div><span class="pstat" id="sb19-p1r">0</span><span class="pballs" id="sb19-p1b">(0)</span></div>
+      </div>
+      <div class="mid-sep" id="sb19-midsep"></div>
+      <div class="player" id="sb19-p2wrap">
+        <div class="pname" style="color:rgba(255,255,255,0.45);"><span id="sb19-p2">—</span></div>
+        <div><span class="pstat" style="color:rgba(255,255,255,0.45);" id="sb19-p2r">0</span><span class="pballs" id="sb19-p2b">(0)</span></div>
+      </div>
+      <div class="win-block" id="sb19-win">
+        <div class="win-txt" id="sb19-wt">TEAM WINS</div>
+        <div class="win-sub" id="sb19-ws">BY RUNS</div>
+      </div>
+    </div>
+
+    <div class="right-block">
+      <div class="rr-block">
+        <div class="rr-label">Run Rate</div>
+        <div class="rr-val" id="sb19-rr">0.00</div>
+      </div>
+      <div class="bowl-block">
+        <div class="bowl-label">Bowler</div>
+        <div class="bowl-name" id="sb19-bowl">—</div>
+        <div><span class="bowl-fig" id="sb19-fig">0-0</span><span class="bowl-ov" id="sb19-bov">0.0</span></div>
+      </div>
+      <div class="over-block" id="sb19-over"></div>
+      <div class="tgt-block" id="sb19-tgtblk">
+        <div class="tgt-label">Target</div>
+        <div class="tgt-val" id="sb19-tgt">0</div>
+      </div>
+    </div>
+
+  </div>
+  <div id="innings-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:900px;max-width:calc(100vw - 40px);"></div>
+  <div id="match-summary-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:1000px;max-width:calc(100vw - 40px);"></div>
+  <div id="team-sheet-card" data-active-tab="bat" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:30;width:800px;max-width:calc(100vw - 40px);"></div>
+</div>
+<script src="scoreboard-core-offline.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/EasePack.min.js"></script>
+<script src="vendor/confetti.min.js"></script>
+<script src="BroadcastEvents.js"></script>
+<script>
+function obClass(b){
+  const s=String(b);
+  if(s==='W'||s==='W-5')return 'ob ob-W';
+  if(s==='4')return 'ob ob-4';
+  if(s==='6')return 'ob ob-6';
+  if(s==='SB')return 'ob ob-SB';
+  if(/^(Wd|Nb|B|Lb)/.test(s))return 'ob ob-X';
+  return 'ob ob-0';
+}
+function renderBroadcastBar(m,t){
+  const bat=t.find(x=>x.id===m.batTeamId);
+  document.documentElement.style.setProperty('--bat-color',m.batColor||'#c8f514');
+  document.documentElement.style.setProperty('--gold',m.bowlColor||'#f59e0b');
+
+  document.getElementById('sb19-team').textContent=bat?(bat.shortName||bat.name.substring(0,3).toUpperCase()):'—';
+  /* Wave 7.2d — innings pill replaced with over count. */
+  document.getElementById('sb19-inn').textContent=`${Math.floor((m.balls||0)/6)}.${(m.balls||0)%6}`;
+  document.getElementById('sb19-score').textContent=`${m.runs||0}/${m.wickets||0}`;
+  const ov=Math.floor((m.balls||0)/6),bl=(m.balls||0)%6;
+  document.getElementById('sb19-overs').textContent=` ${ov}.${bl}`;
+
+  const finished=m.isFinished;
+  document.getElementById('sb19-p1wrap').style.display=finished?'none':'flex';
+  document.getElementById('sb19-midsep').style.display=finished?'none':'block';
+  document.getElementById('sb19-p2wrap').style.display=finished?'none':'flex';
+  document.getElementById('sb19-win').style.display=finished?'flex':'none';
+  if(finished){
+    document.getElementById('sb19-wt').textContent=(m.winner||'').toUpperCase();
+    document.getElementById('sb19-ws').textContent=(m.winDesc||'').toUpperCase();
+    return;
+  }
+
+  document.getElementById('sb19-p1').textContent=(m||matchData)?.p1?.name||'STRIKER';{const _o=(m||matchData)?.batsmanStats?.[(m||matchData)?.p1?.name]?.out;const _e=document.getElementById('sb19-p1');if(_e)_e.style.color=_o?'rgba(255,255,255,0.32)':'';}
+  document.getElementById('sb19-p1r').textContent=m.p1?.runs||0;
+  document.getElementById('sb19-p1b').textContent=`(${m.p1?.balls||0})`;
+  document.getElementById('sb19-p2').textContent=m.p2?.name||'—';
+  document.getElementById('sb19-p2r').textContent=m.p2?.runs||0;
+  document.getElementById('sb19-p2b').textContent=`(${m.p2?.balls||0})`;
+
+  const crr=m.balls>0?((m.runs||0)/(m.balls/6)).toFixed(2):'0.00';
+  document.getElementById('sb19-rr').textContent=crr;
+  document.getElementById('sb19-bowl').textContent=(m.bowler||'—').toUpperCase();
+  document.getElementById('sb19-fig').textContent=`${m.bowlerWickets||0}-${m.bowlerRuns||0}`;
+  const bBalls=m.bowlerStats?.[m.bowler]?.balls||0;
+  document.getElementById('sb19-bov').textContent=` ${Math.floor(bBalls/6)}.${bBalls%6}`;
+
+  const balls=(m.thisOverBalls||[]).slice(-6);
+  const emp=Math.max(0,6-balls.length);
+  document.getElementById('sb19-over').innerHTML=
+    balls.map(b=>`<div class="${obClass(b)}">${b}</div>`).join('')+
+    Array(emp).fill('<div class="ob ob-e"></div>').join('');
+
+  const st=m.inning===2;
+  document.getElementById('sb19-tgtblk').style.display=st?'flex':'none';
+  if(st) document.getElementById('sb19-tgt').textContent=m.target||0;
+}
+</script>
+</body>
+</html>

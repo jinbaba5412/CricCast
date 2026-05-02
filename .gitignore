@@ -1,0 +1,4 @@
+.env
+criccast_data/
+criccast_uploads/
+node_modules/

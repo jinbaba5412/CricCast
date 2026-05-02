@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CricCast — Live Cricket Scoring for Your Club</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#56d364;--yellow:#e3b341}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+/* NAV */
+nav{position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;z-index:50}
+.nav-logo{font-size:1.25rem;font-weight:700;color:var(--text)}.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:10px}
+.btn{display:inline-block;padding:9px 22px;border-radius:8px;font-weight:600;font-size:.88rem;cursor:pointer;transition:all .2s;border:none}
+.btn-outline{border:1px solid var(--border);color:var(--text);background:transparent}.btn-outline:hover{background:var(--card)}
+.btn-primary{background:#238636;color:#fff}.btn-primary:hover{background:#2ea043}
+/* HERO */
+.hero{text-align:center;padding:90px 5% 70px;max-width:780px;margin:0 auto}
+.hero-badge{display:inline-block;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.3);color:var(--accent);font-size:.75rem;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:22px;text-transform:uppercase;letter-spacing:.06em}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;line-height:1.18;color:#f0f6fc;margin-bottom:22px}
+h1 span{color:var(--accent)}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:540px;margin:0 auto 36px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-btns .btn{font-size:.97rem;padding:13px 30px}
+/* FEATURES */
+section{padding:60px 5%;max-width:1200px;margin:0 auto}
+h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;text-align:center;color:#f0f6fc;margin-bottom:10px}
+.sub{text-align:center;color:var(--muted);margin-bottom:50px;max-width:500px;margin-left:auto;margin-right:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.feat-icon{font-size:2rem;margin-bottom:14px}
+.feat h3{font-size:1rem;font-weight:700;color:#f0f6fc;margin-bottom:8px}
+.feat p{font-size:.85rem;color:var(--muted);line-height:1.6}
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.step{text-align:center;padding:28px 20px}
+.step-num{width:44px;height:44px;border-radius:50%;background:rgba(88,166,255,.15);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-weight:800;color:var(--accent);font-size:1.1rem}
+.step h3{font-size:.98rem;font-weight:700;color:#f0f6fc;margin-bottom:8px}
+.step p{font-size:.83rem;color:var(--muted)}
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:0 auto}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;position:relative}
+.plan.featured{border-color:var(--accent);box-shadow:0 0 0 1px rgba(88,166,255,.3)}
+.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#0d1117;font-size:.72rem;font-weight:800;padding:4px 14px;border-radius:20px;text-transform:uppercase}
+.plan h3{font-size:1.2rem;font-weight:700;color:#f0f6fc;margin-bottom:6px}
+.plan .price{font-size:2rem;font-weight:800;color:#f0f6fc;margin:14px 0 6px}
+.plan .price sub{font-size:.9rem;font-weight:400;color:var(--muted)}
+.plan .pdesc{font-size:.82rem;color:var(--muted);margin-bottom:20px}
+.plan ul{list-style:none;margin-bottom:24px}
+.plan ul li{font-size:.85rem;color:var(--muted);padding:5px 0;display:flex;align-items:center;gap:8px}
+.plan ul li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.plan .btn{width:100%;text-align:center;display:block;padding:11px}
+/* CTA */
+.cta-section{text-align:center;padding:80px 5%;background:linear-gradient(to bottom,transparent,rgba(88,166,255,.04))}
+.cta-section h2{margin-bottom:14px}.cta-section p{color:var(--muted);margin-bottom:32px}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:24px 5%;display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--muted);flex-wrap:wrap;gap:10px}
+@media(max-width:600px){.pricing-grid{grid-template-columns:1fr}nav .nav-links{gap:6px}.btn{padding:8px 14px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">🏏 Cric<span>Cast</span></div>
+  <div class="nav-links">
+    <a class="btn btn-outline" href="/login">Sign in</a>
+    <a class="btn btn-primary" href="/signup">Get started free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🏏 Multi-tenant live scoring SaaS</div>
+  <h1>Live cricket scoring<br>for <span>your club</span></h1>
+  <p>Real-time scoreboards, OBS overlays, and multi-match support — purpose-built for cricket clubs of all sizes.</p>
+  <div class="hero-btns">
+    <a class="btn btn-primary" href="/signup">Create your club — it's free</a>
+    <a class="btn btn-outline" href="#how-it-works">See how it works</a>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section>
+  <h2>Everything your club needs</h2>
+  <p class="sub">Built for scorers, designed for viewers — no app install required.</p>
+  <div class="grid">
+    <div class="feat"><div class="feat-icon">📡</div><h3>Real-time SSE Updates</h3><p>Scoreboards update live via Server-Sent Events — zero lag, no page refresh, no WebSocket issues on shared hosting.</p></div>
+    <div class="feat"><div class="feat-icon">🎨</div><h3>20+ Scoreboard Themes</h3><p>Choose from over 20 stylised scoreboard overlays. Works perfectly in browser or as an OBS browser source.</p></div>
+    <div class="feat"><div class="feat-icon">⚡</div><h3>Multi-match Support</h3><p>Run multiple concurrent matches across your club. Each match has its own isolated state and scoreboard URL.</p></div>
+    <div class="feat"><div class="feat-icon">👥</div><h3>Team & Player Management</h3><p>Manage your club's teams and players. Assign captains, vice-captains, and specialist roles.</p></div>
+    <div class="feat"><div class="feat-icon">📺</div><h3>OBS Overlay Ready</h3><p>Copy the scoreboard URL straight into OBS as a browser source. Custom templates for broadcast layouts.</p></div>
+    <div class="feat"><div class="feat-icon">🔒</div><h3>Per-club Isolation</h3><p>Every club gets its own secure data space. Your matches, teams, and records are completely private.</p></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" style="padding-top:40px">
+  <h2>Up and running in minutes</h2>
+  <p class="sub">No complex setup. Just sign up and start scoring.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h3>Sign up your club</h3><p>Create an account with your club name. Your club gets its own isolated dashboard immediately.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Add teams & players</h3><p>Build your team roster once. Players are available across all your matches with no re-entry.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>Go live</h3><p>Create a match, share the scoreboard link with spectators — or add it to OBS for broadcast.</p></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <h2>Simple, honest pricing</h2>
+  <p class="sub">Start free. Upgrade when your club grows.</p>
+  <div class="pricing-grid">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price">£0<sub>/mo</sub></div>
+      <p class="pdesc">Perfect for small clubs and one-off tournaments.</p>
+      <ul>
+        <li>Up to 3 active matches</li>
+        <li>Up to 10 teams</li>
+        <li>All 20+ scoreboard themes</li>
+        <li>OBS overlay support</li>
+        <li>Real-time SSE streaming</li>
+        <li>Player & team management</li>
+      </ul>
+      <a class="btn btn-outline" href="/signup">Get started</a>
+    </div>
+    <div class="plan featured">
+      <div class="plan-badge">Popular</div>
+      <h3>Pro</h3>
+      <div class="price">Contact us<sub></sub></div>
+      <p class="pdesc">For active clubs running regular fixtures and tournaments.</p>
+      <ul>
+        <li>Up to 20 active matches</li>
+        <li>Up to 50 teams</li>
+        <li>Everything in Free</li>
+        <li>Priority support</li>
+        <li>Custom domain support</li>
+        <li>Usage analytics access</li>
+      </ul>
+      <a class="btn btn-primary" href="/signup">Start free, upgrade later</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to go live?</h2>
+  <p>Join cricket clubs already using CricCast for real-time scoring.</p>
+  <a class="btn btn-primary" href="/signup" style="font-size:1.05rem;padding:14px 36px">Create your free club →</a>
+</div>
+
+<footer>
+  <span>🏏 CricCast SaaS v4.0</span>
+  <span>Questions? <a href="mailto:hello@criccast.app">hello@criccast.app</a></span>
+  <span><a href="/login">Sign in</a> &nbsp;·&nbsp; <a href="/signup">Sign up</a></span>
+</footer>
+</body>
+</html>

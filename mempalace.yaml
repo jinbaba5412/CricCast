@@ -1,0 +1,50 @@
+wing: criccasttt_tuesday
+rooms:
+- name: configuration
+  description: Files from config/
+  keywords:
+  - configuration
+  - config
+- name: criccast_data
+  description: Files from criccast_data/
+  keywords:
+  - criccast_data
+  - criccast_data
+- name: criccast_uploads
+  description: Files from criccast_uploads/
+  keywords:
+  - criccast_uploads
+  - criccast_uploads
+- name: backend
+  description: Files from db/
+  keywords:
+  - backend
+  - db
+- name: lib
+  description: Files from lib/
+  keywords:
+  - lib
+  - lib
+- name: middleware
+  description: Files from middleware/
+  keywords:
+  - middleware
+  - middleware
+- name: scripts
+  description: Files from scripts/
+  keywords:
+  - scripts
+  - scripts
+- name: vendor
+  description: Files from vendor/
+  keywords:
+  - vendor
+  - vendor
+- name: frontend
+  description: Files from views/
+  keywords:
+  - frontend
+  - views
+- name: general
+  description: Files that don't fit other rooms
+  keywords: []

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CricCast — Login</title>
+
+  <!-- Pitch design system: theme JS first to avoid FOUC, then tokens/bridge/base. -->
+  <script src="/assets/cc-theme.js?v=20260429b"></script>
+  <link rel="stylesheet" href="/assets/cc-tokens.css?v=20260429b">
+  <link rel="stylesheet" href="/assets/cc-bridge.css?v=20260429b">
+  <link rel="stylesheet" href="/assets/cc-base.css?v=20260429b">
+</head>
+<body class="cc-body">
+  <div class="cc-auth-shell">
+    <!-- Theme toggle pill — auto-mounts via cc-theme.js -->
+    <div class="cc-auth-theme" data-cc-theme-mount aria-label="Theme"></div>
+
+    <!-- LEFT: form -->
+    <div class="cc-auth-pane cc-auth-form-pane">
+      <div class="cc-auth-card">
+        <div class="cc-auth-brand">CRICCAST</div>
+        <p class="cc-auth-sub">Sign in to your Command Center</p>
+
+        <div class="cc-auth-error" id="err" role="alert" aria-live="polite"></div>
+
+        <div class="cc-auth-field">
+          <label for="email">Email Address</label>
+          <div class="cc-auth-field-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input type="email" id="email" placeholder="admin@yourclub.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="cc-auth-field">
+          <label for="pass">Password</label>
+          <div class="cc-auth-field-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <input type="password" id="pass" placeholder="••••••••" autocomplete="current-password" required>
+          </div>
+        </div>
+
+        <button class="cc-auth-cta" onclick="doLogin()">Sign In</button>
+
+        <div class="cc-auth-meta">
+          Don't have an account? <a class="cc-link" href="/signup">Register your club</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: feature tile (desktop only) -->
+    <div class="cc-auth-pane cc-auth-hero-pane" aria-hidden="true">
+      <div class="cc-auth-hero-bg"></div>
+      <div class="cc-feature-tile" style="max-width:460px;">
+        <h2>Performance Data <span class="accent">At Your Fingertips</span></h2>
+        <p>Real-time scoring, live broadcasts, and team analytics in one centralized command center for cricket clubs.</p>
+        <div class="cc-feature-tile-grid">
+          <div class="cc-feature-tile-cell">
+            <div class="cc-feature-tile-cell-label">Uptime</div>
+            <div class="cc-feature-tile-cell-value">99.9<sub>%</sub></div>
+          </div>
+          <div class="cc-feature-tile-cell">
+            <div class="cc-feature-tile-cell-label">Latency</div>
+            <div class="cc-feature-tile-cell-value">12<sub>ms</sub></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* PRESERVED VERBATIM — IDs, function name, POST body shape, redirect logic.
+       Only the surrounding chrome changed. */
+    async function doLogin() {
+      const email = document.getElementById('email').value.trim();
+      const pass  = document.getElementById('pass').value;
+      const err   = document.getElementById('err');
+      err.style.display = 'none';
+      try {
+        const r = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password: pass })
+        });
+        const data = await r.json();
+        if (data.ok) {
+          const next = new URLSearchParams(location.search).get('next') || '/dashboard';
+          location.href = data.redirect || next;
+        } else {
+          err.textContent = data.error || 'Login failed';
+          err.style.display = 'block';
+        }
+      } catch (e) {
+        err.textContent = 'Network error — please try again';
+        err.style.display = 'block';
+      }
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+  </script>
+</body>
+</html>

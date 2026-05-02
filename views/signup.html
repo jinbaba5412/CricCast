@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CricCast — Register Club</title>
+
+  <script src="/assets/cc-theme.js?v=20260429b"></script>
+  <link rel="stylesheet" href="/assets/cc-tokens.css?v=20260429b">
+  <link rel="stylesheet" href="/assets/cc-bridge.css?v=20260429b">
+  <link rel="stylesheet" href="/assets/cc-base.css?v=20260429b">
+
+  <style>
+    /* Page-local helpers — slug hint copy + form-row grid for desktop. */
+    .signup-hint {
+      font-size: 12px; color: var(--cc-text-muted);
+      margin-top: -8px; margin-bottom: 14px;
+      letter-spacing: 0.01em;
+    }
+    .signup-hint strong { color: var(--cc-accent-primary); font-weight: 600; }
+    @media (min-width: 760px) {
+      .signup-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .signup-row-2 .cc-auth-field { margin-bottom: 0; }
+    }
+    .signup-card { max-width: 540px; }
+    .signup-foot {
+      display: flex; gap: 14px; align-items: center;
+      margin-top: 16px;
+    }
+    .signup-foot .avatars {
+      display: flex; align-items: center;
+    }
+    .signup-foot .avatars span {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--cc-accent-primary), var(--cc-accent-cyan));
+      border: 2px solid var(--cc-bg-base);
+      margin-left: -10px;
+    }
+    .signup-foot .avatars span:first-child { margin-left: 0; }
+    .signup-foot .avatars span:nth-child(2) { background: linear-gradient(135deg, var(--cc-accent-amber), var(--cc-accent-coral)); }
+    .signup-foot .avatars span:nth-child(3) { background: linear-gradient(135deg, var(--cc-accent-cyan), var(--cc-accent-primary)); }
+    .signup-foot p {
+      font-size: 12px; color: var(--cc-text-muted); margin: 0;
+    }
+  </style>
+</head>
+<body class="cc-body">
+  <div class="cc-auth-shell">
+    <div class="cc-auth-theme" data-cc-theme-mount aria-label="Theme"></div>
+
+    <!-- LEFT: form (wider for signup) -->
+    <div class="cc-auth-pane cc-auth-form-pane">
+      <div class="cc-auth-card signup-card">
+        <div class="cc-auth-brand">CRICCAST</div>
+        <p class="cc-auth-sub">Start your club. No credit card required.</p>
+
+        <div class="cc-auth-error"   id="err" role="alert" aria-live="polite"></div>
+        <div class="cc-auth-success" id="ok"  role="status" aria-live="polite"></div>
+
+        <div class="cc-auth-field">
+          <label for="clubName">Club Name</label>
+          <input type="text" id="clubName" placeholder="Itfaq Heros Cricket Club">
+        </div>
+
+        <div class="cc-auth-field">
+          <label for="slug">Club URL Slug</label>
+          <input type="text" id="slug" placeholder="itfaq-heros" oninput="autoSlug(false)">
+        </div>
+        <p class="signup-hint">Your club URL: <strong id="slugPreview">your-club</strong>.criccast.app</p>
+
+        <div class="signup-row-2">
+          <div class="cc-auth-field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Club Admin Name">
+          </div>
+
+          <div class="cc-auth-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="admin@yourclub.com" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="cc-auth-field">
+          <label for="pass">Password</label>
+          <input type="password" id="pass" placeholder="Min. 8 characters" autocomplete="new-password">
+        </div>
+
+        <button class="cc-auth-cta" onclick="doSignup()">Create Club Account</button>
+
+        <div class="cc-auth-meta">
+          Already registered? <a class="cc-link" href="/login">Sign in</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: hero (desktop only) -->
+    <div class="cc-auth-pane cc-auth-hero-pane" aria-hidden="true">
+      <div class="cc-auth-hero-bg"></div>
+      <div class="cc-feature-tile" style="max-width:460px;">
+        <h2>Elevate Your <span class="accent">Match Day</span></h2>
+        <p>Professional analytics and live broadcasting tools for cricket clubs of every size. Manage teams, track player performance, and engage fans in real time.</p>
+        <div class="signup-foot">
+          <div class="avatars" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p>Join 2,000+ clubs worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* PRESERVED VERBATIM — autoSlug, doSignup, IDs, POST shape, 2-second redirect. */
+    document.getElementById('clubName').addEventListener('input', () => autoSlug(true));
+    function autoSlug(fromName) {
+      if (fromName) {
+        const v = document.getElementById('clubName').value
+          .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 30);
+        document.getElementById('slug').value = v;
+      }
+      document.getElementById('slugPreview').textContent =
+        document.getElementById('slug').value || 'your-club';
+    }
+    async function doSignup() {
+      const clubName = document.getElementById('clubName').value.trim();
+      const slug     = document.getElementById('slug').value.trim();
+      const name     = document.getElementById('name').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const password = document.getElementById('pass').value;
+      const err      = document.getElementById('err');
+      const ok       = document.getElementById('ok');
+      err.style.display = ok.style.display = 'none';
+      try {
+        const r = await fetch('/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ clubName, slug, name, email, password })
+        });
+        const data = await r.json();
+        if (data.ok) {
+          ok.textContent = 'Club created! Redirecting to login...';
+          ok.style.display = 'block';
+          setTimeout(() => location.href = '/login', 2000);
+        } else {
+          err.textContent = data.error || 'Signup failed';
+          err.style.display = 'block';
+        }
+      } catch (e) {
+        err.textContent = 'Network error — please try again';
+        err.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

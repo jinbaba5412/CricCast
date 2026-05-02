@@ -1,0 +1,1490 @@
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:185:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469
+      throw new TypeError('Router.use() requires a middleware function but got a ' + gettype(fn))
+      ^
+
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/router/index.js:469:13)
+    at Function.<anonymous> (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express/lib/application.js:224:7)
+    at Object.<anonymous> (/home/khanmimu/criccast/server.js:200:5)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+
+Node.js v20.20.0
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Access denied for user ''@'localhost' (using password: NO)
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error: Unknown column 'data' in 'SELECT'
+    at PromisePool.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/node_modules/mysql2/promise.js:356:22)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:384:30
+    at new Promise (<anonymous>)
+    at MySQLStore.query (/home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:381:10)
+    at /home/khanmimu/nodevenv/criccast/20/lib/node_modules/express-mysql-session/index.js:170:16
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[WARN] [2026-04-30T16:01:25.888Z] [MAILER] SMTP not configured — skipping welcome email {"to":"sportsmellahd@gmail.com"}

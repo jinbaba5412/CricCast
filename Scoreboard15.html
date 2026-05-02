@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CricCast — SB15: Ashes Clean Bar</title>
+<style type="text/css">@font-face{font-family:Bebas Neue;src:url(https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B43_3z3b-.woff2);font-display:swap;}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:900;src:url(https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwLwI-JCGChYJ8VI-L6OO_au7B45_1z3b-.woff2);font-display:swap;}</style>
+<style>
+:root{--bat-color:#2d6a2d;--accent:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Barlow Condensed',sans-serif;font-weight:700;background:transparent;color:#fff;overflow:hidden;}.overlay-wrap{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:fixed;inset:0;padding:0 0 10px 0;z-index:100;}
+
+.wrap{position:fixed;bottom:0;left:0;right:0;height:52px;display:flex;align-items:stretch;}
+
+.team-pill{background:var(--bat-color);display:flex;align-items:center;padding:0 18px 0 16px;gap:12px;flex-shrink:0;}
+.team-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:#fff;}
+
+.score-pill{background:rgba(0,0,0,0.88);display:flex;align-items:center;padding:0 20px;gap:8px;border-left:3px solid var(--bat-color);}
+.main-score{font-family:'Bebas Neue',sans-serif;font-size:32px;color:#fff;letter-spacing:2px;}
+.overs{font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:1px;}
+
+.sep{width:1px;height:32px;margin:0 4px;}
+
+.info-pill{background:rgba(0,0,0,0.88);flex:1;display:flex;align-items:center;padding:0 18px;gap:16px;}
+.info-item{display:flex;align-items:baseline;gap:4px;}
+.info-label{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase;}
+.info-val{font-size:18px;font-weight:900;color:#fff;text-transform:uppercase;}
+.info-sub{font-size:13px;color:rgba(255,255,255,0.45);}
+
+.lead-pill{background:rgba(0,0,0,0.88);display:flex;align-items:center;padding:0 18px;border-left:1px solid rgba(255,255,255,0.08);}
+.lead-txt{font-size:15px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;}
+.lead-val{font-size:15px;color:#fde047;font-weight:900;}
+
+.opp-pill{display:flex;align-items:center;padding:0 16px;border-left:1px solid rgba(255,255,255,0.08);}
+.opp-label{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-right:8px;}
+.opp-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#fff;}
+
+.speed-pill{background:var(--bat-color);display:flex;align-items:center;padding:0 16px;gap:8px;flex-shrink:0;}
+.speed-label{font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;}
+.speed-val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;}
+
+.over-dots{display:flex;gap:4px;align-items:center;margin-left:auto;}
+.od{width:20px;height:20px;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+.od.is4{background:rgba(5,120,60,0.7);border-color:#059669;color:#6ee7b7;}
+.od.is6{background:rgba(13,78,74,0.7);border-color:#0d9488;color:#5eead4;}
+.od.isW{background:rgba(180,20,20,0.7);border-color:#dc2626;color:#fca5a5;}
+.od.isX{background:rgba(40,35,30,0.7);border-color:#57534e;color:#d6d3d1;}
+.od.isSB{background:rgba(200,245,20,0.2);border-color:#c8f514;color:#c8f514;}
+.od.empty{opacity:0.2;}
+</style>
+</head>
+<body>
+<div id="master-wrap" style="display:none;">
+  <div id="master-broadcast-bar" class="wrap">
+
+    <div class="team-pill">
+      <div id="sb15-logo"></div>
+      <div class="team-name" id="sb15-team">AUS</div>
+    </div>
+
+    <div class="score-pill">
+      <span class="main-score" id="sb15-score">0/0</span>
+      <span class="overs" id="sb15-overs">Overs 0.0</span>
+      <div id="sb15-lead" style="display:none;margin-left:8px;">
+        <span class="lead-txt">Lead by&nbsp;</span><span class="lead-val" id="sb15-leadval">0</span>
+      </div>
+    </div>
+
+    <div class="info-pill">
+      <div class="info-item">
+        <span class="info-val" id="sb15-p1">—</span>
+        <span class="info-sub" id="sb15-p1s">0 (0)</span>
+      </div>
+      <div class="sep"></div>
+      <div class="info-item">
+        <span class="info-val" style="color:rgba(255,255,255,0.55);" id="sb15-p2">—</span>
+        <span class="info-sub" id="sb15-p2s">0 (0)</span>
+      </div>
+      <div class="over-dots" id="sb15-over"></div>
+    </div>
+
+    <div class="opp-pill">
+      <span class="opp-label">v</span>
+      <span class="opp-name" id="sb15-opp">—</span>
+    </div>
+
+    <div class="speed-pill">
+      <span class="speed-label">Bowler</span>
+      <span class="speed-val" id="sb15-bowl">—</span>
+      <span style="font-size:14px;color:rgba(255,255,255,0.55);" id="sb15-fig">0-0</span>
+    </div>
+
+  </div>
+  <div id="innings-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:900px;max-width:calc(100vw - 40px);"></div>
+  <div id="match-summary-card" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:25;width:1000px;max-width:calc(100vw - 40px);"></div>
+  <div id="team-sheet-card" data-active-tab="bat" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:30;width:800px;max-width:calc(100vw - 40px);"></div>
+</div>
+<script src="scoreboard-core-offline.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/EasePack.min.js"></script>
+<script src="vendor/confetti.min.js"></script>
+<script src="BroadcastEvents.js"></script>
+<script>
+function bc(b){const s=String(b);if(s==='W'||s==='W-5')return 'od isW';if(s==='4')return 'od is4';if(s==='6')return 'od is6';if(s==='SB')return 'od isSB';if(/^(Wd|Nb|B|Lb)/.test(s))return 'od isX';return 'od';}
+function renderBroadcastBar(m,t){
+  const bat=t.find(x=>x.id===m.batTeamId);
+  const bowl=t.find(x=>x.id===m.bowlTeamId);
+  document.documentElement.style.setProperty('--bat-color',m.batColor||'#2d6a2d');
+  document.getElementById('sb15-logo').innerHTML='';
+  document.getElementById('sb15-team').textContent=bat?(bat.shortName||bat.name.substring(0,3).toUpperCase()):'—';
+  const ov=Math.floor((m.balls||0)/6),bl=(m.balls||0)%6;
+  document.getElementById('sb15-score').textContent=`${m.runs||0}/${m.wickets||0}`;
+  document.getElementById('sb15-overs').textContent=`Overs ${ov}.${bl}`;
+  document.getElementById('sb15-p1').textContent=(m||matchData)?.p1?.name||'STRIKER';{const _o=(m||matchData)?.batsmanStats?.[(m||matchData)?.p1?.name]?.out;const _e=document.getElementById('sb15-p1');if(_e)_e.style.color=_o?'rgba(255,255,255,0.32)':'';}
+  document.getElementById('sb15-p1s').textContent=`${m.p1?.runs||0} (${m.p1?.balls||0})`;
+  document.getElementById('sb15-p2').textContent=m.p2?.name||'—';
+  document.getElementById('sb15-p2s').textContent=`${m.p2?.runs||0} (${m.p2?.balls||0})`;
+  document.getElementById('sb15-opp').textContent=bowl?(bowl.shortName||bowl.name.substring(0,3).toUpperCase()):'—';
+  document.getElementById('sb15-bowl').textContent=(m.bowler||'—').toUpperCase();
+  document.getElementById('sb15-fig').textContent=`${m.bowlerWickets||0}-${m.bowlerRuns||0}`;
+  const showLead=m.inning===2;
+  document.getElementById('sb15-lead').style.display=showLead?'flex':'none';
+  if(showLead&&m.target){const need=m.target-(m.runs||0);document.getElementById('sb15-leadval').textContent=need>0?`Need ${need}`:(m.runs>=m.target?'WON':need);}
+  const balls=(m.thisOverBalls||[]).slice(-6);
+  const emp=Math.max(0,6-balls.length);
+  document.getElementById('sb15-over').innerHTML=balls.map(b=>`<div class="${bc(b)}">${b}</div>`).join('')+Array(emp).fill('<div class="od empty"></div>').join('');
+}
+</script>
+</body>
+</html>
